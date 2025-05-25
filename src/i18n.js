@@ -13,7 +13,7 @@ class I18n {
     }
 
     try {
-      const response = await fetch(`/src/locales/${langCode}.json`)
+      const response = await fetch(`/locales/${langCode}.json`)
       if (!response.ok) {
         throw new Error(`Failed to load language file: ${langCode}`)
       }
