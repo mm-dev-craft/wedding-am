@@ -18,11 +18,16 @@ async function applyLanguage(langCode) {
     
     // Update language button display
     const languageButton = document.getElementById('languageButton')
-    const currentLanguageSpan = document.getElementById('currentLanguage')
+    const currentFlag = document.getElementById('currentFlag')
+    const currentLanguageName = document.getElementById('currentLanguageName')
     
-    if (languageButton && currentLanguageSpan) {
+    if (languageButton && currentFlag && currentLanguageName) {
       const language = languages[langCode]
-      currentLanguageSpan.textContent = `${language.flag} ${i18n.t('header.language')}`
+      currentFlag.textContent = language.flag
+      currentLanguageName.textContent = i18n.t('header.language')
+      
+      // Update tooltip with next language
+      updateLanguageTooltip(langCode)
     }
     
     // Update page content with new translations
@@ -97,6 +102,18 @@ function getNextLanguage(currentLang) {
   return languageOrder[nextIndex]
 }
 
+// Function to update language tooltip
+function updateLanguageTooltip(currentLang) {
+  const tooltip = document.getElementById('languageTooltip')
+  if (tooltip) {
+    const nextLang = getNextLanguage(currentLang)
+    const nextLanguage = languages[nextLang]
+    if (nextLanguage) {
+      tooltip.textContent = `Zu ${nextLanguage.flag} ${nextLanguage.name}`
+    }
+  }
+}
+
 // Initialize language system
 async function initLanguage() {
   console.log('initLanguage function called')
@@ -106,9 +123,10 @@ async function initLanguage() {
   
   const waitForLanguageElements = () => {
     const languageButton = document.getElementById('languageButton')
-    const currentLanguageSpan = document.getElementById('currentLanguage')
+    const currentFlag = document.getElementById('currentFlag')
+    const currentLanguageName = document.getElementById('currentLanguageName')
     
-    if (!languageButton || !currentLanguageSpan) {
+    if (!languageButton || !currentFlag || !currentLanguageName) {
       console.log('Language elements not yet available, retrying...')
       setTimeout(waitForLanguageElements, 10)
       return
@@ -128,13 +146,24 @@ async function initLanguage() {
     
     // Update the initial display and content
     const language = languages[savedLanguage]
-    currentLanguageSpan.textContent = `${language.flag} ${i18n.t('header.language')}`
+    currentFlag.textContent = language.flag
+    currentLanguageName.textContent = i18n.t('header.language')
+    updateLanguageTooltip(savedLanguage)
     updatePageContent()
     
     // Add click event listener
     languageButton.addEventListener('click', async (e) => {
       e.preventDefault()
       console.log('Language button clicked!')
+      
+      // Add visual feedback during language switch
+      const currentFlag = document.getElementById('currentFlag')
+      if (currentFlag) {
+        currentFlag.style.transform = 'scale(1.2) rotate(5deg)'
+        setTimeout(() => {
+          currentFlag.style.transform = ''
+        }, 200)
+      }
       
       const currentLanguage = localStorage.getItem('language') || 'de'
       const nextLanguage = getNextLanguage(currentLanguage)
@@ -282,8 +311,13 @@ document.querySelector('#app').innerHTML = `
     <!-- Header Controls -->
     <div class="fixed top-2 sm:top-4 right-2 sm:right-4 z-50 flex flex-col sm:flex-row gap-2 sm:gap-3">
       <!-- Language Toggle Button -->
-      <button id="languageButton" class="bg-white dark:bg-gray-800 text-gray-800 dark:text-white p-2 sm:p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-600 min-w-[100px] sm:min-w-[120px]">
-        <span id="currentLanguage" class="text-xs sm:text-sm font-medium" data-i18n="header.language">🇩🇪 Deutsch</span>
+      <button id="languageButton" class="bg-white dark:bg-gray-800 text-gray-800 dark:text-white p-2 sm:p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-600 min-w-[44px] sm:min-w-[120px] flex items-center justify-center gap-2 hover:scale-105 hover:bg-gray-50 dark:hover:bg-gray-700 active:scale-95 relative group" title="Sprache wechseln">
+        <span id="currentFlag" class="text-xl sm:text-2xl filter drop-shadow-sm transition-transform duration-200 hover:scale-110">🇩🇪</span>
+        <span id="currentLanguageName" class="text-xs sm:text-sm font-medium hidden sm:inline whitespace-nowrap transition-opacity duration-200" data-i18n="header.language">Deutsch</span>
+        <!-- Tooltip -->
+        <div id="languageTooltip" class="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-gray-800 dark:bg-gray-700 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap">
+          Klicke zum Wechseln
+        </div>
       </button>
       
       <!-- Dark Mode Toggle Button -->
@@ -520,7 +554,9 @@ document.querySelector('#app').innerHTML = `
         <div class="text-center mb-12 sm:mb-16">
           <div class="flex justify-center mb-4">
             <svg class="w-12 h-12 text-purple-500 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h8m2-10a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 3h12l-1 5c-.5 2.5-2.5 4.5-5 4.5s-4.5-2-5-4.5L6 3z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 12.5V19"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 21h6"></path>
             </svg>
           </div>
           <h2 class="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-gray-800 dark:text-white mb-4 transition-colors duration-300" data-i18n="party.title">Die Hochzeitsfeier</h2>
