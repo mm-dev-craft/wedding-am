@@ -1,0 +1,98 @@
+{
+  "meta": {
+    "title": "Unsere Hochzeit - Willkommen zu unserem besonderen Tag",
+    "description": "Wir heiraten! Alle Informationen zu unserer Hochzeit - Trauung und Feier."
+  },
+  "header": {
+    "language": "Deutsch"
+  },
+  "hero": {
+    "title": "Wir heiraten!",
+    "names": "Anna & Michell",
+    "date": "03. Juni 2025",
+    "description": "Liebe Familie und Freunde, wir freuen uns riesig, diesen besonderen Tag mit euch zu teilen! Hier findet ihr alle wichtigen Informationen zu unserer Hochzeit.",
+    "buttons": {
+      "ceremony": "Zur Trauung",
+      "photos": "Zu den Fotos",
+      "party": "Zur Feier"
+    }
+  },
+  "ceremony": {
+    "title": "Die Trauung",
+    "subtitle": "Hier beginnt unser gemeinsamer Weg",
+    "when": {
+      "title": "Wann?",
+      "date": "Datum:",
+      "dateValue": "03. Juni 2025",
+      "meeting": "Treffpunkt:",
+      "meetingValue": "12:00 Uhr vor dem Römer"
+    },
+    "where": {
+      "title": "Wo?",
+      "venue": "Standesamt Frankfurt am Main",
+      "address": "Römerberg 27\n60311 Frankfurt am Main"
+    },
+    "maps": {
+      "openInGoogleMaps": "In Google Maps öffnen",
+      "parking": "Parkplatz"
+    }
+  },
+  "photos": {
+    "title": "Fotos",
+    "subtitle": "Festhalten der schönsten Momente",
+    "gruppenfotos": {
+      "title": "Gruppenfotos",
+      "time": "Nach der Trauung",
+      "location": "Vor dem Römer",
+      "description": "Wir werden direkt nach der Trauung gemeinsame Gruppenfotos vor dem historischen Römer machen."
+    },
+    "brautpaarfotos": {
+      "title": "Brautpaarfotos",
+      "time": "Nach den Gruppenfotos",
+      "location": "Neue Altstadt Frankfurt",
+      "description": "Anschließend machen wir romantische Brautpaarfotos in der neuen Altstadt. Die anderen Gäste können währenddessen bereits zur Location fahren."
+    },
+    "sektempfang": {
+      "title": "Weitere Fotos",
+      "time": "Beim Sektempfang",
+      "location": "MANO im Engelhof",
+      "description": "Ein paar weitere schöne Fotos werden beim Sektempfang in der Location gemacht."
+    },
+    "availability": {
+      "title": "Verfügbarkeit",
+      "description": "Der Link zu allen Fotos wird später auf dieser Webseite verfügbar sein."
+    }
+  },
+  "party": {
+    "title": "Die Hochzeitsfeier",
+    "subtitle": "Lasst uns gemeinsam feiern!",
+    "when": {
+      "title": "Wann?",
+      "date": "Datum:",
+      "dateValue": "03. Juni 2025",
+      "start": "Beginn:",
+      "startValue": "14:30 Uhr",
+      "end": "Ende:",
+      "endValue": "open end"
+    },
+    "where": {
+      "title": "Wo?",
+      "venue": "MANO im Engelhof",
+      "address": "Leinwebergasse 6\n60311 Frankfurt am Main",
+      "phone": "Tel: 069 212345-67"
+    },
+    "info": {
+      "title": "Wichtige Infos",
+      "items": [
+        "Mehr Informationen folgen."
+      ]
+    },
+    "maps": {
+      "openInGoogleMaps": "In Google Maps öffnen"
+    }
+  },
+  "footer": {
+    "names": "Anna & Michell",
+    "message": "Wir freuen uns darauf, diesen besonderen Tag mit euch zu teilen!"
+  }
+}
