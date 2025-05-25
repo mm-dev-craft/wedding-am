@@ -1,4 +1,3 @@
-// Internationalization utility
 class I18n {
   constructor() {
     this.currentLanguage = 'de'
@@ -15,8 +14,16 @@ class I18n {
     try {
       const response = await fetch(`/locales/${langCode}.json`)
       if (!response.ok) {
-        throw new Error(`Failed to load language file: ${langCode}`)
+        throw new Error(`Failed to load language file: ${langCode} (Status: ${response.status})`)
       }
+      
+      // Check if response is actually JSON
+      const contentType = response.headers.get('content-type')
+      if (!contentType || !contentType.includes('application/json')) {
+        console.error(`Received non-JSON response for ${langCode}:`, await response.text())
+        throw new Error(`Invalid response type for language file: ${langCode}`)
+      }
+      
       const translations = await response.json()
       this.translations[langCode] = translations
       return translations
