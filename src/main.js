@@ -825,56 +825,30 @@ document.querySelector('#app').innerHTML = `
             <h3 class="text-lg sm:text-xl font-semibold text-gray-800 dark:text-white mb-2" data-i18n="party.gallery.title">Feier Highlights</h3>
             <p class="text-sm text-gray-600 dark:text-gray-300" data-i18n="party.gallery.subtitle">Die schönsten Momente unserer Hochzeitsfeier</p>
           </div>
-          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
-            <div class="aspect-square bg-gradient-to-br from-purple-100 to-pink-100 dark:from-purple-900/20 dark:to-pink-900/20 rounded-lg flex items-center justify-center group hover:scale-105 transition-transform duration-300 shadow-md">
-              <div class="text-center">
-                <svg class="w-8 h-8 sm:w-12 sm:h-12 text-purple-400 dark:text-purple-300 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"></path>
-                </svg>
-                <p class="text-xs text-gray-500 dark:text-gray-400" data-i18n="gallery.placeholder">Foto kommt bald</p>
-              </div>
+          <div id="galleryContainer" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+            <!-- Gallery items will be loaded here dynamically -->
+          </div>
+          
+          <!-- Loading indicator -->
+          <div id="galleryLoading" class="text-center py-8">
+            <div class="inline-flex items-center px-4 py-2 font-semibold leading-6 text-sm shadow rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 transition ease-in-out duration-150 cursor-not-allowed">
+              <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              </svg>
+              Bilder werden geladen...
             </div>
-            <div class="aspect-square bg-gradient-to-br from-amber-100 to-orange-100 dark:from-amber-900/20 dark:to-orange-900/20 rounded-lg flex items-center justify-center group hover:scale-105 transition-transform duration-300 shadow-md">
-              <div class="text-center">
-                <svg class="w-8 h-8 sm:w-12 sm:h-12 text-amber-400 dark:text-amber-300 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 3h12l-1 5c-.5 2.5-2.5 4.5-5 4.5s-4.5-2-5-4.5L6 3z"></path>
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 12.5V19"></path>
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 21h6"></path>
+          </div>
+          
+          <!-- Lightbox Modal -->
+          <div id="lightboxModal" class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden items-center justify-center p-4">
+            <div class="relative max-w-4xl max-h-full">
+              <button id="closeLightbox" class="absolute top-4 right-4 text-white hover:text-gray-300 z-10">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
-                <p class="text-xs text-gray-500 dark:text-gray-400" data-i18n="gallery.placeholder">Foto kommt bald</p>
-              </div>
-            </div>
-            <div class="aspect-square bg-gradient-to-br from-green-100 to-emerald-100 dark:from-green-900/20 dark:to-emerald-900/20 rounded-lg flex items-center justify-center group hover:scale-105 transition-transform duration-300 shadow-md">
-              <div class="text-center">
-                <svg class="w-8 h-8 sm:w-12 sm:h-12 text-green-400 dark:text-green-300 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                </svg>
-                <p class="text-xs text-gray-500 dark:text-gray-400" data-i18n="gallery.placeholder">Foto kommt bald</p>
-              </div>
-            </div>
-            <div class="aspect-square bg-gradient-to-br from-rose-100 to-red-100 dark:from-rose-900/20 dark:to-red-900/20 rounded-lg flex items-center justify-center group hover:scale-105 transition-transform duration-300 shadow-md">
-              <div class="text-center">
-                <svg class="w-8 h-8 sm:w-12 sm:h-12 text-rose-400 dark:text-rose-300 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                </svg>
-                <p class="text-xs text-gray-500 dark:text-gray-400" data-i18n="gallery.placeholder">Foto kommt bald</p>
-              </div>
-            </div>
-            <div class="aspect-square bg-gradient-to-br from-blue-100 to-indigo-100 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-lg flex items-center justify-center group hover:scale-105 transition-transform duration-300 shadow-md">
-              <div class="text-center">
-                <svg class="w-8 h-8 sm:w-12 sm:h-12 text-blue-400 dark:text-blue-300 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1.01M15 10h1.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                </svg>
-                <p class="text-xs text-gray-500 dark:text-gray-400" data-i18n="gallery.placeholder">Foto kommt bald</p>
-              </div>
-            </div>
-            <div class="aspect-square bg-gradient-to-br from-pink-100 to-purple-100 dark:from-pink-900/20 dark:to-purple-900/20 rounded-lg flex items-center justify-center group hover:scale-105 transition-transform duration-300 shadow-md">
-              <div class="text-center">
-                <svg class="w-8 h-8 sm:w-12 sm:h-12 text-pink-400 dark:text-pink-300 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path>
-                </svg>
-                <p class="text-xs text-gray-500 dark:text-gray-400" data-i18n="gallery.placeholder">Foto kommt bald</p>
-              </div>
+              </button>
+              <img id="lightboxImage" class="max-w-full max-h-full object-contain rounded-lg" src="" alt="">
             </div>
           </div>
         </div>
@@ -917,6 +891,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // Initialize language system first
   await initLanguage()
+
+  // Initialize gallery
+  await loadGalleryImages()
 
   // Initialer Zustand: gespeicherte Präferenz, sonst hell
   const saved = localStorage.getItem('theme')
@@ -977,3 +954,193 @@ document.addEventListener('click', function(e) {
     }
   }
 })
+
+// Gallery functionality for loading media asynchronously
+const galleryImages = [
+  'alena.jpg',
+  'aljona-anna-michell-geschenk.jpg',
+  'aljona-kristina.jpg',
+  'aljona-torte.jpg',
+  'anna-hinten.jpg',
+  'anna-michell.jpg',
+  'anna-sophia-alena-torte.jpg',
+  'dragan-lachend.jpg',
+  'dragan-nikola-maja.jpg',
+  'gb-kuchen.jpg',
+  'geschenke-michell.jpg',
+  'heiko-ankommen.jpg',
+  'heiko-kristina-anna-michell.jpg',
+  'heiko-michell.jpg',
+  'iphone-kristina-sophia.jpg',
+  'kristina-anna-michell.jpg',
+  'lisa.jpg',
+  'maja-foto.jpg',
+  'maja-lachend.jpg',
+  'mama-lida.jpg',
+  'michell-anna-torte.jpg',
+  'nikola-maja-rede.jpg',
+  'ralf.jpg',
+  'sascha.jpg',
+  'shayan-2.jpg',
+  'shayan.jpg',
+  'snack-tisch.jpg',
+  'snacks-1.jpg',
+  'snacks-2.jpg',
+  'tisch-anstoßen.jpg',
+  'tisch.jpg',
+  'torte.jpg',
+  'viktor-rede.jpg',
+  'viktor.jpg',
+  'willkommenschild.jpg',
+  'wowa.jpg'
+];
+
+// Function to create a gallery item with lazy loading
+function createGalleryItem(imageName, index) {
+  const imagePath = `/media/${imageName}`;
+  
+  const gradients = [
+    'from-purple-100 to-pink-100 dark:from-purple-900/20 dark:to-pink-900/20',
+    'from-blue-100 to-indigo-100 dark:from-blue-900/20 dark:to-indigo-900/20',
+    'from-green-100 to-emerald-100 dark:from-green-900/20 dark:to-emerald-900/20',
+    'from-amber-100 to-orange-100 dark:from-amber-900/20 dark:to-orange-900/20',
+    'from-rose-100 to-pink-100 dark:from-rose-900/20 dark:to-pink-900/20',
+    'from-cyan-100 to-blue-100 dark:from-cyan-900/20 dark:to-blue-900/20'
+  ];
+  
+  const gradient = gradients[index % gradients.length];
+  
+  return `
+    <div class="aspect-square bg-gradient-to-br ${gradient} rounded-lg overflow-hidden group hover:scale-105 transition-transform duration-300 shadow-md cursor-pointer gallery-item"
+         data-image="${imagePath}">
+      <div class="w-full h-full relative">
+        <img class="w-full h-full object-cover opacity-0 transition-opacity duration-500 lazy-image" 
+             data-src="${imagePath}" 
+             loading="lazy">
+        <!-- Loading placeholder -->
+        <div class="absolute inset-0 flex items-center justify-center image-placeholder">
+          <svg class="w-8 h-8 text-gray-400 dark:text-gray-500 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+// Function to load gallery images asynchronously
+async function loadGalleryImages() {
+  const container = document.getElementById('galleryContainer');
+  const loading = document.getElementById('galleryLoading');
+  
+  if (!container || !loading) return;
+  
+  try {
+    // Create gallery items HTML
+    const galleryHTML = galleryImages.map((imageName, index) => 
+      createGalleryItem(imageName, index)
+    ).join('');
+    
+    // Insert gallery items
+    container.innerHTML = galleryHTML;
+    
+    // Hide loading indicator
+    loading.style.display = 'none';
+    
+    // Set up intersection observer for lazy loading
+    setupLazyLoading();
+    
+    // Set up lightbox functionality
+    setupLightbox();
+    
+  } catch (error) {
+    console.error('Error loading gallery:', error);
+    loading.innerHTML = `
+      <div class="text-center py-8">
+        <p class="text-red-500 dark:text-red-400">Fehler beim Laden der Bilder</p>
+      </div>
+    `;
+  }
+}
+
+// Function to set up lazy loading with Intersection Observer
+function setupLazyLoading() {
+  const lazyImages = document.querySelectorAll('.lazy-image');
+  
+  const imageObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        const placeholder = img.parentElement.querySelector('.image-placeholder');
+        
+        img.src = img.dataset.src;
+        img.onload = () => {
+          img.classList.remove('opacity-0');
+          if (placeholder) {
+            placeholder.style.display = 'none';
+          }
+        };
+        img.onerror = () => {
+          if (placeholder) {
+            placeholder.innerHTML = `
+              <svg class="w-8 h-8 text-red-400 dark:text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            `;
+          }
+        };
+        
+        observer.unobserve(img);
+      }
+    });
+  });
+  
+  lazyImages.forEach(img => imageObserver.observe(img));
+}
+
+// Function to set up lightbox functionality
+function setupLightbox() {
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  const lightboxModal = document.getElementById('lightboxModal');
+  const lightboxImage = document.getElementById('lightboxImage');
+  const closeLightbox = document.getElementById('closeLightbox');
+  
+  if (!lightboxModal || !lightboxImage || !closeLightbox) return;
+  
+  // Add click handlers to gallery items
+  galleryItems.forEach(item => {
+    item.addEventListener('click', () => {
+      const imageSrc = item.dataset.image;
+      
+      lightboxImage.src = imageSrc;
+      lightboxModal.classList.remove('hidden');
+      lightboxModal.classList.add('flex');
+      
+      // Prevent body scroll
+      document.body.style.overflow = 'hidden';
+    });
+  });
+  
+  // Close lightbox functionality
+  function closeLightboxModal() {
+    lightboxModal.classList.add('hidden');
+    lightboxModal.classList.remove('flex');
+    document.body.style.overflow = 'auto';
+  }
+  
+  closeLightbox.addEventListener('click', closeLightboxModal);
+  
+  // Close on backdrop click
+  lightboxModal.addEventListener('click', (e) => {
+    if (e.target === lightboxModal) {
+      closeLightboxModal();
+    }
+  });
+  
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !lightboxModal.classList.contains('hidden')) {
+      closeLightboxModal();
+    }
+  });
+}
