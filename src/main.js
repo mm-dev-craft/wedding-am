@@ -321,8 +321,9 @@ document.querySelector('#app').innerHTML = `
           muted 
           loop 
           playsinline
-          class="w-full h-full object-cover opacity-80"
+          class="w-full h-full object-cover object-top opacity-80"
           preload="metadata"
+          style="object-position: center 30%;"
         >
           <source src="/media/hochzeitsvideo.mov" type="video/quicktime">
           <source src="/media/hochzeitsvideo.mov" type="video/mp4">
