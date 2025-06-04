@@ -1,16 +1,16 @@
 {
   "meta": {
-    "title": "Unsere Hochzeit - Willkommen zu unserem besonderen Tag",
-    "description": "Wir heiraten! Alle Informationen zu unserer Hochzeit - Trauung und Feier."
+    "title": "Unsere Hochzeit - Erinnerungen an unseren besonderen Tag",
+    "description": "Wir haben geheiratet! Alle Informationen zu unserer Hochzeit - Trauung und Feier."
   },
   "header": {
     "language": "Deutsch"
   },
   "hero": {
-    "title": "Wir heiraten!",
+    "title": "Wir haben geheiratet!",
     "names": "Anna & Michell",
     "date": "03. Juni 2025",
-    "description": "Liebe Familie und Freunde, wir freuen uns riesig, diesen besonderen Tag mit euch zu teilen! Hier findet ihr alle wichtigen Informationen zu unserer Hochzeit.",
+    "description": "Liebe Familie und Freunde, wir freuen uns riesig, dass wir diesen besonderen Tag mit euch teilen konnten! Hier findet ihr alle Erinnerungen und Informationen zu unserer Hochzeit.",
     "buttons": {
       "ceremony": "Zur Trauung",
       "photos": "Zu den Fotos",
@@ -23,7 +23,7 @@
   },
   "ceremony": {
     "title": "Die Trauung",
-    "subtitle": "Hier beginnt unser gemeinsamer Weg",
+    "subtitle": "Hier begann unser gemeinsamer Weg",
     "when": {
       "title": "Wann?",
       "date": "Datum:",
@@ -109,9 +109,9 @@
   },
   "footer": {
     "names": "Anna & Michell",
-    "message": "Wir freuen uns darauf, diesen besonderen Tag mit euch zu teilen!"
+    "message": "Wir freuen uns, dass wir diesen besonderen Tag mit euch teilen konnten!"
   },
   "gallery": {
-    "placeholder": "Foto kommt bald"
+    "placeholder": "Foto wird bald verfügbar sein"
   }
 }
