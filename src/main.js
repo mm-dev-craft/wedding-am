@@ -325,8 +325,9 @@ document.querySelector('#app').innerHTML = `
           preload="metadata"
           style="object-position: center 30%;"
         >
+          <source src="/media/hochzeitsvideo.webm" type="video/webm">
+          <source src="/media/hochzeitsvideo.mp4" type="video/mp4">
           <source src="/media/hochzeitsvideo.mov" type="video/quicktime">
-          <source src="/media/hochzeitsvideo.mov" type="video/mp4">
           <!-- Fallback für ältere Browser -->
           Ihr Browser unterstützt das Video-Element nicht.
         </video>
