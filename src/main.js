@@ -375,6 +375,70 @@ document.querySelector('#app').innerHTML = `
           </a>
         </div>
       </div>
+      
+      <!-- Hero Galerie -->
+      <div class="max-w-6xl mx-auto px-4 mt-12">
+        <div class="text-center mb-6">
+          <h3 class="text-lg sm:text-xl font-semibold text-gray-800 dark:text-white mb-2" data-i18n="hero.gallery.title">Unsere schönsten Momente</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-300" data-i18n="hero.gallery.subtitle">Erinnerungen, die uns verbinden</p>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
+          <div class="aspect-square bg-gradient-to-br from-rose-100 to-pink-100 dark:from-rose-900/20 dark:to-pink-900/20 rounded-lg flex items-center justify-center group hover:scale-105 transition-transform duration-300 shadow-md">
+            <div class="text-center">
+              <svg class="w-8 h-8 sm:w-12 sm:h-12 text-rose-400 dark:text-rose-300 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+              <p class="text-xs text-gray-500 dark:text-gray-400" data-i18n="gallery.placeholder">Foto kommt bald</p>
+            </div>
+          </div>
+          <div class="aspect-square bg-gradient-to-br from-purple-100 to-indigo-100 dark:from-purple-900/20 dark:to-indigo-900/20 rounded-lg flex items-center justify-center group hover:scale-105 transition-transform duration-300 shadow-md">
+            <div class="text-center">
+              <svg class="w-8 h-8 sm:w-12 sm:h-12 text-purple-400 dark:text-purple-300 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+              <p class="text-xs text-gray-500 dark:text-gray-400" data-i18n="gallery.placeholder">Foto kommt bald</p>
+            </div>
+          </div>
+          <div class="aspect-square bg-gradient-to-br from-blue-100 to-cyan-100 dark:from-blue-900/20 dark:to-cyan-900/20 rounded-lg flex items-center justify-center group hover:scale-105 transition-transform duration-300 shadow-md">
+            <div class="text-center">
+              <svg class="w-8 h-8 sm:w-12 sm:h-12 text-blue-400 dark:text-blue-300 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+              <p class="text-xs text-gray-500 dark:text-gray-400" data-i18n="gallery.placeholder">Foto kommt bald</p>
+            </div>
+          </div>
+          <div class="aspect-square bg-gradient-to-br from-amber-100 to-orange-100 dark:from-amber-900/20 dark:to-orange-900/20 rounded-lg flex items-center justify-center group hover:scale-105 transition-transform duration-300 shadow-md">
+            <div class="text-center">
+              <svg class="w-8 h-8 sm:w-12 sm:h-12 text-amber-400 dark:text-amber-300 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+              <p class="text-xs text-gray-500 dark:text-gray-400" data-i18n="gallery.placeholder">Foto kommt bald</p>
+            </div>
+          </div>
+          <div class="aspect-square bg-gradient-to-br from-emerald-100 to-teal-100 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-lg flex items-center justify-center group hover:scale-105 transition-transform duration-300 shadow-md">
+            <div class="text-center">
+              <svg class="w-8 h-8 sm:w-12 sm:h-12 text-emerald-400 dark:text-emerald-300 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+              <p class="text-xs text-gray-500 dark:text-gray-400" data-i18n="gallery.placeholder">Foto kommt bald</p>
+            </div>
+          </div>
+          <div class="aspect-square bg-gradient-to-br from-pink-100 to-rose-100 dark:from-pink-900/20 dark:to-rose-900/20 rounded-lg flex items-center justify-center group hover:scale-105 transition-transform duration-300 shadow-md">
+            <div class="text-center">
+              <svg class="w-8 h-8 sm:w-12 sm:h-12 text-pink-400 dark:text-pink-300 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+              <p class="text-xs text-gray-500 dark:text-gray-400" data-i18n="gallery.placeholder">Foto kommt bald</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Trauung Section -->
@@ -448,6 +512,64 @@ document.querySelector('#app').innerHTML = `
             <a href="https://maps.google.com/?q=Parkhaus+Dom+Römer,+Domstraße+1,+60311+Frankfurt+am+Main" target="_blank" class="w-full inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transform hover:scale-[1.02] transition-all duration-200" data-i18n="ceremony.maps.parking">
               Parkplatz
             </a>
+          </div>
+        </div>
+        
+        <!-- Trauung Galerie -->
+        <div class="mt-12 sm:mt-16">
+          <div class="text-center mb-6 sm:mb-8">
+            <h3 class="text-lg sm:text-xl font-semibold text-gray-800 dark:text-white mb-2" data-i18n="ceremony.gallery.title">Trauungsmomente</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-300" data-i18n="ceremony.gallery.subtitle">Der Beginn unserer gemeinsamen Reise</p>
+          </div>
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
+            <div class="aspect-square bg-gradient-to-br from-rose-100 to-pink-100 dark:from-rose-900/20 dark:to-pink-900/20 rounded-lg flex items-center justify-center group hover:scale-105 transition-transform duration-300 shadow-md">
+              <div class="text-center">
+                <svg class="w-8 h-8 sm:w-12 sm:h-12 text-rose-400 dark:text-rose-300 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                </svg>
+                <p class="text-xs text-gray-500 dark:text-gray-400" data-i18n="gallery.placeholder">Foto kommt bald</p>
+              </div>
+            </div>
+            <div class="aspect-square bg-gradient-to-br from-purple-100 to-indigo-100 dark:from-purple-900/20 dark:to-indigo-900/20 rounded-lg flex items-center justify-center group hover:scale-105 transition-transform duration-300 shadow-md">
+              <div class="text-center">
+                <svg class="w-8 h-8 sm:w-12 sm:h-12 text-purple-400 dark:text-purple-300 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                </svg>
+                <p class="text-xs text-gray-500 dark:text-gray-400" data-i18n="gallery.placeholder">Foto kommt bald</p>
+              </div>
+            </div>
+            <div class="aspect-square bg-gradient-to-br from-amber-100 to-yellow-100 dark:from-amber-900/20 dark:to-yellow-900/20 rounded-lg flex items-center justify-center group hover:scale-105 transition-transform duration-300 shadow-md">
+              <div class="text-center">
+                <svg class="w-8 h-8 sm:w-12 sm:h-12 text-amber-400 dark:text-amber-300 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                </svg>
+                <p class="text-xs text-gray-500 dark:text-gray-400" data-i18n="gallery.placeholder">Foto kommt bald</p>
+              </div>
+            </div>
+            <div class="aspect-square bg-gradient-to-br from-emerald-100 to-teal-100 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-lg flex items-center justify-center group hover:scale-105 transition-transform duration-300 shadow-md">
+              <div class="text-center">
+                <svg class="w-8 h-8 sm:w-12 sm:h-12 text-emerald-400 dark:text-emerald-300 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                </svg>
+                <p class="text-xs text-gray-500 dark:text-gray-400" data-i18n="gallery.placeholder">Foto kommt bald</p>
+              </div>
+            </div>
+            <div class="aspect-square bg-gradient-to-br from-blue-100 to-cyan-100 dark:from-blue-900/20 dark:to-cyan-900/20 rounded-lg flex items-center justify-center group hover:scale-105 transition-transform duration-300 shadow-md">
+              <div class="text-center">
+                <svg class="w-8 h-8 sm:w-12 sm:h-12 text-blue-400 dark:text-blue-300 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                </svg>
+                <p class="text-xs text-gray-500 dark:text-gray-400" data-i18n="gallery.placeholder">Foto kommt bald</p>
+              </div>
+            </div>
+            <div class="aspect-square bg-gradient-to-br from-pink-100 to-rose-100 dark:from-pink-900/20 dark:to-rose-900/20 rounded-lg flex items-center justify-center group hover:scale-105 transition-transform duration-300 shadow-md">
+              <div class="text-center">
+                <svg class="w-8 h-8 sm:w-12 sm:h-12 text-pink-400 dark:text-pink-300 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path>
+                </svg>
+                <p class="text-xs text-gray-500 dark:text-gray-400" data-i18n="gallery.placeholder">Foto kommt bald</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -545,6 +667,66 @@ document.querySelector('#app').innerHTML = `
             Der Link zu allen Fotos wird später auf dieser Webseite verfügbar sein.
           </p>
         </div>
+        
+        <!-- Fotos Galerie -->
+        <div class="mt-12 sm:mt-16">
+          <div class="text-center mb-6 sm:mb-8">
+            <h3 class="text-lg sm:text-xl font-semibold text-gray-800 dark:text-white mb-2" data-i18n="photos.gallery.title">Fotogalerie</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-300" data-i18n="photos.gallery.subtitle">Wunderschöne Aufnahmen unseres besonderen Tages</p>
+          </div>
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
+            <div class="aspect-square bg-gradient-to-br from-indigo-100 to-purple-100 dark:from-indigo-900/20 dark:to-purple-900/20 rounded-lg flex items-center justify-center group hover:scale-105 transition-transform duration-300 shadow-md">
+              <div class="text-center">
+                <svg class="w-8 h-8 sm:w-12 sm:h-12 text-indigo-400 dark:text-indigo-300 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+                <p class="text-xs text-gray-500 dark:text-gray-400" data-i18n="gallery.placeholder">Foto kommt bald</p>
+              </div>
+            </div>
+            <div class="aspect-square bg-gradient-to-br from-rose-100 to-pink-100 dark:from-rose-900/20 dark:to-pink-900/20 rounded-lg flex items-center justify-center group hover:scale-105 transition-transform duration-300 shadow-md">
+              <div class="text-center">
+                <svg class="w-8 h-8 sm:w-12 sm:h-12 text-rose-400 dark:text-rose-300 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                </svg>
+                <p class="text-xs text-gray-500 dark:text-gray-400" data-i18n="gallery.placeholder">Foto kommt bald</p>
+              </div>
+            </div>
+            <div class="aspect-square bg-gradient-to-br from-emerald-100 to-teal-100 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-lg flex items-center justify-center group hover:scale-105 transition-transform duration-300 shadow-md">
+              <div class="text-center">
+                <svg class="w-8 h-8 sm:w-12 sm:h-12 text-emerald-400 dark:text-emerald-300 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2m-9 2v12a2 2 0 002 2h6a2 2 0 002-2V6H7z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 11v6m4-6v6"></path>
+                </svg>
+                <p class="text-xs text-gray-500 dark:text-gray-400" data-i18n="gallery.placeholder">Foto kommt bald</p>
+              </div>
+            </div>
+            <div class="aspect-square bg-gradient-to-br from-yellow-100 to-orange-100 dark:from-yellow-900/20 dark:to-orange-900/20 rounded-lg flex items-center justify-center group hover:scale-105 transition-transform duration-300 shadow-md">
+              <div class="text-center">
+                <svg class="w-8 h-8 sm:w-12 sm:h-12 text-yellow-400 dark:text-yellow-300 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                </svg>
+                <p class="text-xs text-gray-500 dark:text-gray-400" data-i18n="gallery.placeholder">Foto kommt bald</p>
+              </div>
+            </div>
+            <div class="aspect-square bg-gradient-to-br from-cyan-100 to-blue-100 dark:from-cyan-900/20 dark:to-blue-900/20 rounded-lg flex items-center justify-center group hover:scale-105 transition-transform duration-300 shadow-md">
+              <div class="text-center">
+                <svg class="w-8 h-8 sm:w-12 sm:h-12 text-cyan-400 dark:text-cyan-300 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                </svg>
+                <p class="text-xs text-gray-500 dark:text-gray-400" data-i18n="gallery.placeholder">Foto kommt bald</p>
+              </div>
+            </div>
+            <div class="aspect-square bg-gradient-to-br from-purple-100 to-indigo-100 dark:from-purple-900/20 dark:to-indigo-900/20 rounded-lg flex items-center justify-center group hover:scale-105 transition-transform duration-300 shadow-md">
+              <div class="text-center">
+                <svg class="w-8 h-8 sm:w-12 sm:h-12 text-purple-400 dark:text-purple-300 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path>
+                </svg>
+                <p class="text-xs text-gray-500 dark:text-gray-400" data-i18n="gallery.placeholder">Foto kommt bald</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -629,6 +811,66 @@ document.querySelector('#app').innerHTML = `
                 • Parkplätze vorhanden<br>
                 • Dresscode: Festlich
               </p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Feier Galerie -->
+        <div class="mt-12 sm:mt-16">
+          <div class="text-center mb-6 sm:mb-8">
+            <h3 class="text-lg sm:text-xl font-semibold text-gray-800 dark:text-white mb-2" data-i18n="party.gallery.title">Feier Highlights</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-300" data-i18n="party.gallery.subtitle">Die schönsten Momente unserer Hochzeitsfeier</p>
+          </div>
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
+            <div class="aspect-square bg-gradient-to-br from-purple-100 to-pink-100 dark:from-purple-900/20 dark:to-pink-900/20 rounded-lg flex items-center justify-center group hover:scale-105 transition-transform duration-300 shadow-md">
+              <div class="text-center">
+                <svg class="w-8 h-8 sm:w-12 sm:h-12 text-purple-400 dark:text-purple-300 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"></path>
+                </svg>
+                <p class="text-xs text-gray-500 dark:text-gray-400" data-i18n="gallery.placeholder">Foto kommt bald</p>
+              </div>
+            </div>
+            <div class="aspect-square bg-gradient-to-br from-amber-100 to-orange-100 dark:from-amber-900/20 dark:to-orange-900/20 rounded-lg flex items-center justify-center group hover:scale-105 transition-transform duration-300 shadow-md">
+              <div class="text-center">
+                <svg class="w-8 h-8 sm:w-12 sm:h-12 text-amber-400 dark:text-amber-300 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 3h12l-1 5c-.5 2.5-2.5 4.5-5 4.5s-4.5-2-5-4.5L6 3z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 12.5V19"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 21h6"></path>
+                </svg>
+                <p class="text-xs text-gray-500 dark:text-gray-400" data-i18n="gallery.placeholder">Foto kommt bald</p>
+              </div>
+            </div>
+            <div class="aspect-square bg-gradient-to-br from-green-100 to-emerald-100 dark:from-green-900/20 dark:to-emerald-900/20 rounded-lg flex items-center justify-center group hover:scale-105 transition-transform duration-300 shadow-md">
+              <div class="text-center">
+                <svg class="w-8 h-8 sm:w-12 sm:h-12 text-green-400 dark:text-green-300 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                </svg>
+                <p class="text-xs text-gray-500 dark:text-gray-400" data-i18n="gallery.placeholder">Foto kommt bald</p>
+              </div>
+            </div>
+            <div class="aspect-square bg-gradient-to-br from-rose-100 to-red-100 dark:from-rose-900/20 dark:to-red-900/20 rounded-lg flex items-center justify-center group hover:scale-105 transition-transform duration-300 shadow-md">
+              <div class="text-center">
+                <svg class="w-8 h-8 sm:w-12 sm:h-12 text-rose-400 dark:text-rose-300 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                </svg>
+                <p class="text-xs text-gray-500 dark:text-gray-400" data-i18n="gallery.placeholder">Foto kommt bald</p>
+              </div>
+            </div>
+            <div class="aspect-square bg-gradient-to-br from-blue-100 to-indigo-100 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-lg flex items-center justify-center group hover:scale-105 transition-transform duration-300 shadow-md">
+              <div class="text-center">
+                <svg class="w-8 h-8 sm:w-12 sm:h-12 text-blue-400 dark:text-blue-300 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1.01M15 10h1.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <p class="text-xs text-gray-500 dark:text-gray-400" data-i18n="gallery.placeholder">Foto kommt bald</p>
+              </div>
+            </div>
+            <div class="aspect-square bg-gradient-to-br from-pink-100 to-purple-100 dark:from-pink-900/20 dark:to-purple-900/20 rounded-lg flex items-center justify-center group hover:scale-105 transition-transform duration-300 shadow-md">
+              <div class="text-center">
+                <svg class="w-8 h-8 sm:w-12 sm:h-12 text-pink-400 dark:text-pink-300 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path>
+                </svg>
+                <p class="text-xs text-gray-500 dark:text-gray-400" data-i18n="gallery.placeholder">Foto kommt bald</p>
+              </div>
             </div>
           </div>
         </div>

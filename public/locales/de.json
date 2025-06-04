@@ -15,6 +15,10 @@
       "ceremony": "Zur Trauung",
       "photos": "Zu den Fotos",
       "party": "Zur Feier"
+    },
+    "gallery": {
+      "title": "Unsere schönsten Momente",
+      "subtitle": "Erinnerungen, die uns verbinden"
     }
   },
   "ceremony": {
@@ -35,6 +39,10 @@
     "maps": {
       "openInGoogleMaps": "In Google Maps öffnen",
       "parking": "Parkplatz"
+    },
+    "gallery": {
+      "title": "Trauungsmomente",
+      "subtitle": "Der Beginn unserer gemeinsamen Reise"
     }
   },
   "photos": {
@@ -61,6 +69,10 @@
     "availability": {
       "title": "Verfügbarkeit",
       "description": "Der Link zu allen Fotos wird später auf dieser Webseite verfügbar sein."
+    },
+    "gallery": {
+      "title": "Fotogalerie",
+      "subtitle": "Wunderschöne Aufnahmen unseres besonderen Tages"
     }
   },
   "party": {
@@ -89,10 +101,17 @@
     },
     "maps": {
       "openInGoogleMaps": "In Google Maps öffnen"
+    },
+    "gallery": {
+      "title": "Feier Highlights",
+      "subtitle": "Die schönsten Momente unserer Hochzeitsfeier"
     }
   },
   "footer": {
     "names": "Anna & Michell",
     "message": "Wir freuen uns darauf, diesen besonderen Tag mit euch zu teilen!"
+  },
+  "gallery": {
+    "placeholder": "Foto kommt bald"
   }
 }
