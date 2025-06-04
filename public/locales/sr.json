@@ -73,6 +73,24 @@
     "gallery": {
       "title": "Фотогалерија",
       "subtitle": "Прелепе фотографије нашег посебног дана"
+    },
+    "thanks": {
+      "title": "Захвалност",
+      "subtitle": "Посебна захвалност нашим талентованим фотографима:",
+      "photographers": [
+        {
+          "name": "Leon",
+          "url": "https://www.lr-foto.de/"
+        },
+        {
+          "name": "Daniel",
+          "url": "https://www.instagram.com/daniel.schindel91/"
+        },
+        {
+          "name": "Maja",
+          "url": ""
+        }
+      ]
     }
   },
   "party": {
