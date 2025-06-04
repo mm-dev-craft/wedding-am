@@ -235,26 +235,6 @@ function initDarkMode() {
       console.log('Dark mode already initialized, skipping...')
       return
     }
-    
-    // Function to update icons based on current mode
-    function updateIcons() {
-      const isDark = html.classList.contains('dark')
-      console.log('Updating icons, isDark:', isDark)
-      
-      if (isDark) {
-        // Dark mode: Zeige Sonne (um zu Light zu wechseln)
-        sunIcon.classList.remove('opacity-0', 'scale-75')
-        sunIcon.classList.add('opacity-100', 'scale-100')
-        moonIcon.classList.remove('opacity-100', 'scale-100')
-        moonIcon.classList.add('opacity-0', 'scale-75')
-      } else {
-        // Light mode: Zeige Mond (um zu Dark zu wechseln)
-        sunIcon.classList.remove('opacity-100', 'scale-100')
-        sunIcon.classList.add('opacity-0', 'scale-75')
-        moonIcon.classList.remove('opacity-0', 'scale-75')
-        moonIcon.classList.add('opacity-100', 'scale-100')
-      }
-    }
 
 
     
@@ -332,11 +312,31 @@ document.querySelector('#app').innerHTML = `
     </div>
 
     <!-- Hero Section -->
-    <section class="py-16 sm:py-20 px-4">
-      <div class="max-w-4xl mx-auto text-center">
+    <section class="py-16 sm:py-20 px-4 relative overflow-hidden">
+      <!-- Background Video -->
+      <div class="absolute inset-0 z-0">
+        <video 
+          id="backgroundVideo"
+          autoplay 
+          muted 
+          loop 
+          playsinline
+          class="w-full h-full object-cover opacity-80"
+          preload="metadata"
+        >
+          <source src="/media/hochzeitsvideo.mov" type="video/quicktime">
+          <source src="/media/hochzeitsvideo.mov" type="video/mp4">
+          <!-- Fallback für ältere Browser -->
+          Ihr Browser unterstützt das Video-Element nicht.
+        </video>
+        <!-- Overlay für bessere Lesbarkeit des Textes -->
+        <div class="absolute inset-0 bg-gradient-to-br from-rose-50/30 via-pink-50/25 to-purple-50/30 dark:from-gray-900/40 dark:via-gray-800/35 dark:to-purple-900/40"></div>
+      </div>
+      
+      <div class="max-w-4xl mx-auto text-center relative z-10">
         <!-- Hearts decoration -->
         <div class="flex justify-center mb-6 sm:mb-8">
-          <div class="flex space-x-2 text-rose-400">
+          <div class="flex space-x-2 text-rose-400 drop-shadow-lg">
             <svg class="w-6 h-6 sm:w-8 sm:h-8" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path>
             </svg>
@@ -375,9 +375,12 @@ document.querySelector('#app').innerHTML = `
           </a>
         </div>
       </div>
-      
+    </section>
+
+    <!-- Hero Galerie Section (separate from video background) -->
+    <section class="py-8 sm:py-12 px-4 bg-gradient-to-br from-rose-50 via-pink-50 to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-purple-900 transition-colors duration-300">
       <!-- Hero Galerie -->
-      <div class="max-w-6xl mx-auto px-4 mt-12">
+      <div class="max-w-6xl mx-auto px-4">
         <div class="text-center mb-6">
           <h3 class="text-lg sm:text-xl font-semibold text-gray-800 dark:text-white mb-2" data-i18n="hero.gallery.title">Unsere schönsten Momente</h3>
           <p class="text-sm text-gray-600 dark:text-gray-300" data-i18n="hero.gallery.subtitle">Erinnerungen, die uns verbinden</p>
@@ -908,6 +911,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   window.sunIcon = document.getElementById('sunIcon')
   window.moonIcon = document.getElementById('moonIcon')
 
+  // Initialize background video
+  initBackgroundVideo()
+
   // Initialize language system first
   await initLanguage()
 
@@ -922,6 +928,39 @@ document.addEventListener('DOMContentLoaded', async () => {
     applyDarkMode(!document.documentElement.classList.contains('dark'))
   )
 })
+
+// Function to initialize background video
+function initBackgroundVideo() {
+  const video = document.getElementById('backgroundVideo')
+  if (video) {
+    // Ensure video plays properly on mobile devices
+    video.setAttribute('playsinline', 'true')
+    video.setAttribute('webkit-playsinline', 'true')
+    
+    // Try to play the video
+    const playPromise = video.play()
+    if (playPromise !== undefined) {
+      playPromise.catch(error => {
+        console.log('Video autoplay failed:', error)
+        // Fallback: User interaction required for video play
+        document.addEventListener('click', () => {
+          video.play().catch(e => console.log('Video play failed:', e))
+        }, { once: true })
+      })
+    }
+    
+    // Handle video load errors
+    video.addEventListener('error', (e) => {
+      console.log('Video load error:', e)
+      // Hide video on error
+      video.style.display = 'none'
+    })
+    
+    // Ensure video is muted
+    video.muted = true
+    video.volume = 0
+  }
+}
 
 // Smooth scrolling for navigation links
 document.addEventListener('click', function(e) {
