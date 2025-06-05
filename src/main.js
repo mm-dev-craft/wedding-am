@@ -918,7 +918,27 @@ document.querySelector('#app').innerHTML = `
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
               </button>
-              <img id="lightboxImage" class="max-w-full max-h-full object-contain rounded-lg" src="" alt="">
+              
+              <!-- Previous Image Button -->
+              <button id="prevImage" class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-300 z-10 bg-black bg-opacity-50 rounded-full p-2 hover:bg-opacity-70 transition-all duration-200">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+              </button>
+              
+              <!-- Next Image Button -->
+              <button id="nextImage" class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-300 z-10 bg-black bg-opacity-50 rounded-full p-2 hover:bg-opacity-70 transition-all duration-200">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </button>
+              
+              <img id="lightboxImage" class="max-w-full max-h-full object-contain rounded-lg cursor-pointer" src="" alt="">
+              
+              <!-- Image Counter -->
+              <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white bg-black bg-opacity-50 px-3 py-1 rounded-full text-sm">
+                <span id="imageCounter">1 / 1</span>
+              </div>
             </div>
           </div>
         </div>
@@ -1174,22 +1194,110 @@ function setupLightbox() {
   const lightboxModal = document.getElementById('lightboxModal');
   const lightboxImage = document.getElementById('lightboxImage');
   const closeLightbox = document.getElementById('closeLightbox');
+  const prevImageBtn = document.getElementById('prevImage');
+  const nextImageBtn = document.getElementById('nextImage');
+  const imageCounter = document.getElementById('imageCounter');
   
   if (!lightboxModal || !lightboxImage || !closeLightbox) return;
   
+  let currentImageIndex = 0;
+  
+  // Function to update image counter
+  function updateImageCounter() {
+    if (imageCounter) {
+      imageCounter.textContent = `${currentImageIndex + 1} / ${galleryImages.length}`;
+    }
+  }
+  
+  // Function to show image at specific index
+  function showImageAtIndex(index) {
+    if (index >= 0 && index < galleryImages.length) {
+      currentImageIndex = index;
+      const imagePath = `/media/${galleryImages[index]}`;
+      lightboxImage.src = imagePath;
+      updateImageCounter();
+    }
+  }
+  
+  // Function to show next image
+  function showNextImage() {
+    const nextIndex = (currentImageIndex + 1) % galleryImages.length;
+    showImageAtIndex(nextIndex);
+  }
+  
+  // Function to show previous image
+  function showPreviousImage() {
+    const prevIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+    showImageAtIndex(prevIndex);
+  }
+  
   // Add click handlers to gallery items
-  galleryItems.forEach(item => {
+  galleryItems.forEach((item, index) => {
     item.addEventListener('click', () => {
+      currentImageIndex = index;
       const imageSrc = item.dataset.image;
       
       lightboxImage.src = imageSrc;
       lightboxModal.classList.remove('hidden');
       lightboxModal.classList.add('flex');
+      updateImageCounter();
       
       // Prevent body scroll
       document.body.style.overflow = 'hidden';
     });
   });
+  
+  // Add click handler to navigation buttons
+  if (prevImageBtn) {
+    prevImageBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      showPreviousImage();
+    });
+  }
+  
+  if (nextImageBtn) {
+    nextImageBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      showNextImage();
+    });
+  }
+  
+  // Add click handler to lightbox image for next image
+  lightboxImage.addEventListener('click', (e) => {
+    e.stopPropagation();
+    showNextImage();
+  });
+  
+  // Add touch support for mobile devices
+  let touchStartX = 0;
+  let touchEndX = 0;
+  
+  lightboxImage.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  });
+  
+  lightboxImage.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+  });
+  
+  function handleSwipe() {
+    const swipeThreshold = 50;
+    const swipeDistance = touchEndX - touchStartX;
+    
+    if (Math.abs(swipeDistance) > swipeThreshold) {
+      if (swipeDistance > 0) {
+        // Swipe right - previous image
+        showPreviousImage();
+      } else {
+        // Swipe left - next image
+        showNextImage();
+      }
+    } else {
+      // Small swipe or tap - next image
+      showNextImage();
+    }
+  }
   
   // Close lightbox functionality
   function closeLightboxModal() {
@@ -1207,10 +1315,23 @@ function setupLightbox() {
     }
   });
   
-  // Close on Escape key
+  // Keyboard navigation
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && !lightboxModal.classList.contains('hidden')) {
-      closeLightboxModal();
+    if (!lightboxModal.classList.contains('hidden')) {
+      switch(e.key) {
+        case 'Escape':
+          closeLightboxModal();
+          break;
+        case 'ArrowRight':
+        case ' ': // Spacebar
+          e.preventDefault();
+          showNextImage();
+          break;
+        case 'ArrowLeft':
+          e.preventDefault();
+          showPreviousImage();
+          break;
+      }
     }
   });
 }
