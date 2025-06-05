@@ -757,12 +757,7 @@ document.querySelector('#app').innerHTML = `
                     </svg>
                   </div>
                   <h4 class="font-semibold text-gray-800 dark:text-white mb-2">Leon</h4>
-                  <a href="https://www.lr-foto.de/" target="_blank" class="inline-flex items-center text-sm text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors duration-200">
-                    <span>lr-foto.de</span>
-                    <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                    </svg>
-                  </a>
+                  <p class="text-sm text-gray-500 dark:text-gray-400">Fotograf</p>
                 </div>
               </div>
               
@@ -776,12 +771,7 @@ document.querySelector('#app').innerHTML = `
                     </svg>
                   </div>
                   <h4 class="font-semibold text-gray-800 dark:text-white mb-2">Daniel</h4>
-                  <a href="https://www.instagram.com/daniel.schindel91/" target="_blank" class="inline-flex items-center text-sm text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 transition-colors duration-200">
-                    <span>@daniel.schindel91</span>
-                    <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                    </svg>
-                  </a>
+                  <p class="text-sm text-gray-500 dark:text-gray-400">Fotograf</p>
                 </div>
               </div>
               

@@ -76,15 +76,15 @@
     },
     "thanks": {
       "title": "Благодарность",
-      "subtitle": "Особая благодарность нашим талантливым фотографам:",
+      "subtitle": "Благодарим наших талантливых фотографов:",
       "photographers": [
         {
           "name": "Leon",
-          "url": "https://www.lr-foto.de/"
+          "url": ""
         },
         {
           "name": "Daniel",
-          "url": "https://www.instagram.com/daniel.schindel91/"
+          "url": ""
         },
         {
           "name": "Maja",
