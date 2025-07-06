@@ -610,6 +610,46 @@ document.querySelector('#app').innerHTML = `
       </div>
     </section>
 
+    <!-- Dankessagung Section -->
+    <section class="py-16 sm:py-20 bg-gradient-to-br from-rose-50 via-pink-50 to-red-50 dark:from-gray-900 dark:via-rose-900 dark:to-red-900 transition-colors duration-300">
+      <div class="max-w-4xl mx-auto px-4">
+        <div class="text-center mb-12 sm:mb-16">
+          <div class="flex justify-center mb-6">
+            <div class="p-4 bg-gradient-to-br from-rose-500 to-pink-600 rounded-full shadow-lg">
+              <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+              </svg>
+            </div>
+          </div>
+          <h2 class="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-gray-800 dark:text-white mb-4 transition-colors duration-300" data-i18n="thanks.title">Herzlichen Dank</h2>
+          <p class="text-lg sm:text-xl text-rose-600 dark:text-rose-400 font-medium mb-8 transition-colors duration-300" data-i18n="thanks.subtitle">Wir sind überwältigt von so viel Liebe und Unterstützung</p>
+        </div>
+        
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 sm:p-8 lg:p-12 transition-colors duration-300">
+          <div class="text-center">
+            <p class="text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-8 transition-colors duration-300" data-i18n="thanks.message">
+              Liebe Familie und Freunde, wir möchten uns von ganzem Herzen bei euch allen bedanken, dass ihr unseren besonderen Tag mit uns geteilt habt. Eure Anwesenheit, eure warmen Worte und eure wunderschönen Geschenke haben unsere Hochzeit zu einem unvergesslichen Erlebnis gemacht. Wir fühlen uns so gesegnet, euch alle in unserem Leben zu haben!
+            </p>
+            
+            <div class="flex justify-center items-center">
+              <div class="text-center">
+                <p class="text-rose-600 dark:text-rose-400 font-semibold text-lg sm:text-xl mb-2 transition-colors duration-300" data-i18n="thanks.with_love">Mit unendlicher Dankbarkeit und Liebe</p>
+                <div class="flex items-center justify-center space-x-2">
+                  <svg class="w-6 h-6 text-rose-500" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                  </svg>
+                  <span class="text-2xl font-serif font-bold text-gray-800 dark:text-white transition-colors duration-300">Anna & Michell</span>
+                  <svg class="w-6 h-6 text-rose-500" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Fotos Section -->
     <section id="fotos" class="py-16 sm:py-20 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-gray-800 dark:via-indigo-900 dark:to-purple-900 transition-colors duration-300">
       <div class="max-w-6xl mx-auto px-4">

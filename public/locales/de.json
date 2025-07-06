@@ -45,6 +45,12 @@
       "subtitle": "Der Beginn unserer gemeinsamen Reise"
     }
   },
+  "thanks": {
+    "title": "Herzlichen Dank",
+    "subtitle": "Wir sind überwältigt von so viel Liebe und Unterstützung",
+    "message": "Liebe Familie und Freunde, wir möchten uns von ganzem Herzen bei euch allen bedanken, dass ihr unseren besonderen Tag mit uns geteilt habt. Eure Anwesenheit, eure warmen Worte und eure wunderschönen Geschenke haben unsere Hochzeit zu einem unvergesslichen Erlebnis gemacht. Wir fühlen uns so gesegnet, euch alle in unserem Leben zu haben!",
+    "with_love": "Mit unendlicher Dankbarkeit und Liebe"
+  },
   "photos": {
     "title": "Fotos",
     "subtitle": "Festhalten der schönsten Momente",
