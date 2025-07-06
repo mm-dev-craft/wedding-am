@@ -67,8 +67,11 @@
       "description": "Ein paar weitere schöne Fotos werden beim Sektempfang in der Location gemacht."
     },
     "availability": {
-      "title": "Verfügbarkeit",
-      "description": "Der Link zu allen Fotos wird später auf dieser Webseite verfügbar sein."
+      "title": "Unsere gemeinsame Foto-Sammlung",
+      "description": "Hier könnt ihr eure wunderschönen Fotos von unserem besonderen Tag hochladen und alle anderen Erinnerungen herunterladen. Lasst uns gemeinsam eine komplette Sammlung aller magischen Momente erstellen! ✨",
+      "link": "https://anmimi-nas.quickconnect.to/mo/request/",
+      "linkText": "Zur Foto-Sammlung",
+      "note": "PS: Habt etwas Geduld beim Laden - wir haben leider nicht die Server-Power von Google"
     },
     "gallery": {
       "title": "Fotogalerie",
