@@ -1013,11 +1013,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     await loadCeremonyGalleryImages()
   }, 500) // Load ceremony images with slight delay
 
-  // PHASE 3: Load remaining images with delay
-  console.log('🎯 Phase 3: Loading remaining gallery images...')
-  setTimeout(async () => {
-    await loadRemainingGalleryImages()
-  }, 1000) // 1 second delay to prioritize hero images
+  // Note: Gallery images are now loaded via pagination system with infinite scroll
+  // The first batch is loaded in setupGalleryStructure(), further batches load on scroll
 
   // Initialer Zustand: gespeicherte Präferenz, sonst hell
   const saved = localStorage.getItem('theme')
@@ -1453,7 +1450,12 @@ async function loadHeroGalleryImages() {
   setupLightbox();
 }
 
-// PHASE 2: Setup main gallery structure without loading images
+// Pagination configuration
+const IMAGES_PER_PAGE = 10;
+let currentPage = 0;
+let isLoadingMore = false;
+
+// PHASE 2: Setup main gallery structure with pagination
 async function setupGalleryStructure() {
   const container = document.getElementById('galleryContainer');
   const loading = document.getElementById('galleryLoading');
@@ -1461,83 +1463,83 @@ async function setupGalleryStructure() {
   if (!container || !loading) return;
   
   try {
-    // Create gallery items HTML without triggering image loads
-    const galleryHTML = galleryImages.map((imageName, index) => 
-      createGalleryItem(imageName, index)
-    ).join('');
+    // Clear container
+    container.innerHTML = '';
     
-    // Insert gallery items
-    container.innerHTML = galleryHTML;
+    // Load first batch of images
+    await loadImageBatch(0);
     
-    // Update loading indicator to show phase 2 status
-    loading.innerHTML = `
-      <div class="inline-flex items-center px-4 py-2 font-semibold leading-6 text-sm shadow rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 transition ease-in-out duration-150">
-        <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-        </svg>
-        Hauptgalerie wird vorbereitet...
-      </div>
-    `;
+    // Set up infinite scroll
+    setupInfiniteScroll();
     
-    // Set up lightbox functionality (structure is ready)
+    // Set up lightbox functionality
     setupLightbox();
     
-    console.log('Gallery structure set up successfully');
+    console.log('Gallery structure with pagination set up successfully');
     
   } catch (error) {
     console.error('Error setting up gallery structure:', error);
   }
 }
 
-// PHASE 3: Load remaining gallery images with optimized strategy
-async function loadRemainingGalleryImages() {
+// Function to load a batch of images
+async function loadImageBatch(page) {
   const container = document.getElementById('galleryContainer');
   const loading = document.getElementById('galleryLoading');
-  const lazyImages = document.querySelectorAll('#galleryContainer .lazy-image');
   
-  if (!container || lazyImages.length === 0) {
-    console.log('No gallery images to load');
-    if (loading) loading.style.display = 'none';
+  if (!container || isLoadingMore) return;
+  
+  const startIndex = page * IMAGES_PER_PAGE;
+  const endIndex = Math.min(startIndex + IMAGES_PER_PAGE, galleryImages.length);
+  
+  if (startIndex >= galleryImages.length) {
+    // No more images to load
+    if (loading) {
+      loading.innerHTML = `
+        <div class="text-center py-4">
+          <p class="text-gray-500 dark:text-gray-400">Alle Bilder geladen</p>
+        </div>
+      `;
+    }
     return;
   }
-
-  console.log(`Starting to load ${lazyImages.length} main gallery images...`);
+  
+  isLoadingMore = true;
   
   // Update loading indicator
-  loading.innerHTML = `
-    <div class="inline-flex items-center px-4 py-2 font-semibold leading-6 text-sm shadow rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 transition ease-in-out duration-150">
-      <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-      </svg>
-      Galerie wird geladen... <span id="loadingProgress">0/${lazyImages.length}</span>
-    </div>
-  `;
-
-  let loadedCount = 0;
-  const progressElement = document.getElementById('loadingProgress');
-
-  // Load images in batches to prevent overwhelming the browser
-  const batchSize = 6; // Load 6 images at a time
-  const batches = [];
-  
-  for (let i = 0; i < lazyImages.length; i += batchSize) {
-    batches.push(Array.from(lazyImages).slice(i, i + batchSize));
+  if (loading) {
+    loading.innerHTML = `
+      <div class="inline-flex items-center px-4 py-2 font-semibold leading-6 text-sm shadow rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 transition ease-in-out duration-150">
+        <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        </svg>
+        Bilder ${startIndex + 1}-${endIndex} werden geladen...
+      </div>
+    `;
   }
-
-  for (let batchIndex = 0; batchIndex < batches.length; batchIndex++) {
-    const batch = batches[batchIndex];
+  
+  try {
+    // Create HTML for this batch
+    const batchImages = galleryImages.slice(startIndex, endIndex);
+    const batchHTML = batchImages.map((imageName, index) => 
+      createGalleryItem(imageName, startIndex + index)
+    ).join('');
     
-    console.log(`📦 Loading batch ${batchIndex + 1}/${batches.length} (${batch.length} images)`);
+    // Add batch to container
+    container.insertAdjacentHTML('beforeend', batchHTML);
     
-    // Load all images in current batch concurrently
-    const batchPromises = batch.map((img, imgIndex) => {
+    // Load images for this batch
+    const newLazyImages = container.querySelectorAll('.lazy-image:not([data-loaded])');
+    let loadedCount = 0;
+    
+    const loadPromises = Array.from(newLazyImages).map((img) => {
       return new Promise((resolve) => {
         const placeholder = img.parentElement.querySelector('.image-placeholder');
         const imageSrc = img.dataset.src;
         
         if (!imageSrc) {
+          img.setAttribute('data-loaded', 'true');
           resolve();
           return;
         }
@@ -1547,11 +1549,9 @@ async function loadRemainingGalleryImages() {
           if (placeholder) {
             placeholder.style.display = 'none';
           }
+          img.setAttribute('data-loaded', 'true');
           loadedCount++;
-          if (progressElement) {
-            progressElement.textContent = `${loadedCount}/${lazyImages.length}`;
-          }
-          console.log(`✅ Gallery image loaded (${loadedCount}/${lazyImages.length}): ${imageSrc}`);
+          console.log(`✅ Gallery image loaded (${loadedCount}/${newLazyImages.length}): ${imageSrc}`);
           resolve();
         };
         
@@ -1563,10 +1563,8 @@ async function loadRemainingGalleryImages() {
               </svg>
             `;
           }
+          img.setAttribute('data-loaded', 'true');
           loadedCount++;
-          if (progressElement) {
-            progressElement.textContent = `${loadedCount}/${lazyImages.length}`;
-          }
           console.warn(`❌ Failed to load gallery image: ${imageSrc}`);
           resolve();
         };
@@ -1576,22 +1574,89 @@ async function loadRemainingGalleryImages() {
       });
     });
 
-    // Wait for current batch to complete before starting next batch
-    await Promise.allSettled(batchPromises);
+    // Wait for all images in batch to load
+    await Promise.allSettled(loadPromises);
     
-    // Small delay between batches to prevent browser overload
-    if (batchIndex < batches.length - 1) {
-      await new Promise(resolve => setTimeout(resolve, 200));
+    // Update page counter
+    currentPage = page;
+    
+    // Update loading indicator
+    if (loading) {
+      if (endIndex >= galleryImages.length) {
+        loading.innerHTML = `
+          <div class="text-center py-4">
+            <p class="text-gray-500 dark:text-gray-400">Alle ${galleryImages.length} Bilder geladen</p>
+          </div>
+        `;
+      } else {
+        loading.innerHTML = `
+          <div class="text-center py-4">
+            <p class="text-gray-500 dark:text-gray-400">${endIndex} von ${galleryImages.length} Bildern geladen</p>
+            <p class="text-sm text-gray-400 dark:text-gray-500">Scrolle nach unten für weitere Bilder</p>
+          </div>
+        `;
+      }
+    }
+    
+    // Setup lightbox for new items
+    setupLightbox();
+    
+    console.log(`📦 Loaded batch ${page + 1}: ${batchImages.length} images (${startIndex + 1}-${endIndex})`);
+    
+  } catch (error) {
+    console.error('Error loading image batch:', error);
+    if (loading) {
+      loading.innerHTML = `
+        <div class="text-center py-4">
+          <p class="text-red-500">Fehler beim Laden der Bilder</p>
+          <button onclick="loadImageBatch(${page})" class="mt-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
+            Erneut versuchen
+          </button>
+        </div>
+      `;
     }
   }
-
-  // Hide loading indicator
-  loading.style.display = 'none';
-  console.log('🎉 All gallery images loading completed!');
   
-  // Re-setup lightbox functionality now that all images are loaded
-  setupLightbox();
+  isLoadingMore = false;
 }
+
+// Function to setup infinite scroll
+function setupInfiniteScroll() {
+  const loading = document.getElementById('galleryLoading');
+  
+  if (!loading) return;
+  
+  // Create intersection observer for infinite scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting && !isLoadingMore) {
+        const nextPage = currentPage + 1;
+        const nextStartIndex = nextPage * IMAGES_PER_PAGE;
+        
+        // Check if there are more images to load
+        if (nextStartIndex < galleryImages.length) {
+          console.log(`🔄 Loading next batch (page ${nextPage + 1})`);
+          loadImageBatch(nextPage);
+        }
+      }
+    });
+  }, {
+    rootMargin: '200px' // Start loading 200px before the loading indicator becomes visible
+  });
+  
+  // Observe the loading indicator
+  observer.observe(loading);
+}
+
+// Function to load additional gallery images (called when pagination system is not used)
+async function loadRemainingGalleryImages() {
+  // This function is now replaced by the pagination system
+  // The images are loaded incrementally via loadImageBatch()
+  console.log('Gallery images are loaded via pagination system');
+}
+
+// Global function accessible from HTML for retry buttons
+window.loadImageBatch = loadImageBatch;
 
 // Function to create a gallery item with lazy loading
 function createGalleryItem(imageName, index) {
