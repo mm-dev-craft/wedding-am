@@ -387,59 +387,89 @@ document.querySelector('#app').innerHTML = `
           <h3 class="text-lg sm:text-xl font-semibold text-gray-800 dark:text-white mb-2" data-i18n="hero.gallery.title">Unsere schönsten Momente</h3>
           <p class="text-sm text-gray-600 dark:text-gray-300" data-i18n="hero.gallery.subtitle">Erinnerungen, die uns verbinden</p>
         </div>
-        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
-          <div class="aspect-square bg-gradient-to-br from-rose-100 to-pink-100 dark:from-rose-900/20 dark:to-pink-900/20 rounded-lg flex items-center justify-center group hover:scale-105 transition-transform duration-300 shadow-md">
-            <div class="text-center">
-              <svg class="w-8 h-8 sm:w-12 sm:h-12 text-rose-400 dark:text-rose-300 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path>
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
-              </svg>
-              <p class="text-xs text-gray-500 dark:text-gray-400" data-i18n="gallery.placeholder">Foto kommt bald</p>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4" id="heroGalleryContainer">
+          <div class="aspect-square bg-gradient-to-br from-rose-100 to-pink-100 dark:from-rose-900/20 dark:to-pink-900/20 rounded-lg overflow-hidden group hover:scale-105 transition-transform duration-300 shadow-md cursor-pointer gallery-item"
+               data-image="/media/ringtausch.jpg">
+            <div class="w-full h-full relative">
+              <img class="w-full h-full object-cover opacity-0 transition-opacity duration-500 lazy-image" 
+                   data-src="/media/ringtausch.jpg" 
+                   loading="lazy">
+              <!-- Loading placeholder -->
+              <div class="absolute inset-0 flex items-center justify-center image-placeholder">
+                <svg class="w-8 h-8 text-gray-400 dark:text-gray-500 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+              </div>
             </div>
           </div>
-          <div class="aspect-square bg-gradient-to-br from-purple-100 to-indigo-100 dark:from-purple-900/20 dark:to-indigo-900/20 rounded-lg flex items-center justify-center group hover:scale-105 transition-transform duration-300 shadow-md">
-            <div class="text-center">
-              <svg class="w-8 h-8 sm:w-12 sm:h-12 text-purple-400 dark:text-purple-300 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path>
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
-              </svg>
-              <p class="text-xs text-gray-500 dark:text-gray-400" data-i18n="gallery.placeholder">Foto kommt bald</p>
+          <div class="aspect-square bg-gradient-to-br from-purple-100 to-indigo-100 dark:from-purple-900/20 dark:to-indigo-900/20 rounded-lg overflow-hidden group hover:scale-105 transition-transform duration-300 shadow-md cursor-pointer gallery-item"
+               data-image="/media/jubel.jpg">
+            <div class="w-full h-full relative">
+              <img class="w-full h-full object-cover opacity-0 transition-opacity duration-500 lazy-image" 
+                   data-src="/media/jubel.jpg" 
+                   loading="lazy">
+              <!-- Loading placeholder -->
+              <div class="absolute inset-0 flex items-center justify-center image-placeholder">
+                <svg class="w-8 h-8 text-gray-400 dark:text-gray-500 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+              </div>
             </div>
           </div>
-          <div class="aspect-square bg-gradient-to-br from-blue-100 to-cyan-100 dark:from-blue-900/20 dark:to-cyan-900/20 rounded-lg flex items-center justify-center group hover:scale-105 transition-transform duration-300 shadow-md">
-            <div class="text-center">
-              <svg class="w-8 h-8 sm:w-12 sm:h-12 text-blue-400 dark:text-blue-300 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path>
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
-              </svg>
-              <p class="text-xs text-gray-500 dark:text-gray-400" data-i18n="gallery.placeholder">Foto kommt bald</p>
+          <div class="aspect-square bg-gradient-to-br from-blue-100 to-cyan-100 dark:from-blue-900/20 dark:to-cyan-900/20 rounded-lg overflow-hidden group hover:scale-105 transition-transform duration-300 shadow-md cursor-pointer gallery-item"
+               data-image="/media/ringtausch-2.jpg">
+            <div class="w-full h-full relative">
+              <img class="w-full h-full object-cover opacity-0 transition-opacity duration-500 lazy-image" 
+                   data-src="/media/ringtausch-2.jpg" 
+                   loading="lazy">
+              <!-- Loading placeholder -->
+              <div class="absolute inset-0 flex items-center justify-center image-placeholder">
+                <svg class="w-8 h-8 text-gray-400 dark:text-gray-500 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+              </div>
             </div>
           </div>
-          <div class="aspect-square bg-gradient-to-br from-amber-100 to-orange-100 dark:from-amber-900/20 dark:to-orange-900/20 rounded-lg flex items-center justify-center group hover:scale-105 transition-transform duration-300 shadow-md">
-            <div class="text-center">
-              <svg class="w-8 h-8 sm:w-12 sm:h-12 text-amber-400 dark:text-amber-300 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path>
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
-              </svg>
-              <p class="text-xs text-gray-500 dark:text-gray-400" data-i18n="gallery.placeholder">Foto kommt bald</p>
+          <div class="aspect-square bg-gradient-to-br from-amber-100 to-orange-100 dark:from-amber-900/20 dark:to-orange-900/20 rounded-lg overflow-hidden group hover:scale-105 transition-transform duration-300 shadow-md cursor-pointer gallery-item"
+               data-image="/media/first-sight.jpg">
+            <div class="w-full h-full relative">
+              <img class="w-full h-full object-cover opacity-0 transition-opacity duration-500 lazy-image" 
+                   data-src="/media/first-sight.jpg" 
+                   loading="lazy">
+              <!-- Loading placeholder -->
+              <div class="absolute inset-0 flex items-center justify-center image-placeholder">
+                <svg class="w-8 h-8 text-gray-400 dark:text-gray-500 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+              </div>
             </div>
           </div>
-          <div class="aspect-square bg-gradient-to-br from-emerald-100 to-teal-100 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-lg flex items-center justify-center group hover:scale-105 transition-transform duration-300 shadow-md">
-            <div class="text-center">
-              <svg class="w-8 h-8 sm:w-12 sm:h-12 text-emerald-400 dark:text-emerald-300 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path>
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
-              </svg>
-              <p class="text-xs text-gray-500 dark:text-gray-400" data-i18n="gallery.placeholder">Foto kommt bald</p>
+          <div class="aspect-square bg-gradient-to-br from-emerald-100 to-teal-100 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-lg overflow-hidden group hover:scale-105 transition-transform duration-300 shadow-md cursor-pointer gallery-item"
+               data-image="/media/gruppe-vor-römer.jpg">
+            <div class="w-full h-full relative">
+              <img class="w-full h-full object-cover opacity-0 transition-opacity duration-500 lazy-image" 
+                   data-src="/media/gruppe-vor-römer.jpg" 
+                   loading="lazy">
+              <!-- Loading placeholder -->
+              <div class="absolute inset-0 flex items-center justify-center image-placeholder">
+                <svg class="w-8 h-8 text-gray-400 dark:text-gray-500 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+              </div>
             </div>
           </div>
-          <div class="aspect-square bg-gradient-to-br from-pink-100 to-rose-100 dark:from-pink-900/20 dark:to-rose-900/20 rounded-lg flex items-center justify-center group hover:scale-105 transition-transform duration-300 shadow-md">
-            <div class="text-center">
-              <svg class="w-8 h-8 sm:w-12 sm:h-12 text-pink-400 dark:text-pink-300 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path>
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
-              </svg>
-              <p class="text-xs text-gray-500 dark:text-gray-400" data-i18n="gallery.placeholder">Foto kommt bald</p>
+          <div class="aspect-square bg-gradient-to-br from-pink-100 to-rose-100 dark:from-pink-900/20 dark:to-rose-900/20 rounded-lg overflow-hidden group hover:scale-105 transition-transform duration-300 shadow-md cursor-pointer gallery-item"
+               data-image="/media/trauzeugen.jpg">
+            <div class="w-full h-full relative">
+              <img class="w-full h-full object-cover opacity-0 transition-opacity duration-500 lazy-image" 
+                   data-src="/media/trauzeugen.jpg" 
+                   loading="lazy">
+              <!-- Loading placeholder -->
+              <div class="absolute inset-0 flex items-center justify-center image-placeholder">
+                <svg class="w-8 h-8 text-gray-400 dark:text-gray-500 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+              </div>
             </div>
           </div>
         </div>
@@ -974,6 +1004,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // Initialize gallery
   await loadGalleryImages()
+
+  // Initialize lazy loading for hero gallery
+  setupLazyLoading()
 
   // Initialer Zustand: gespeicherte Präferenz, sonst hell
   const saved = localStorage.getItem('theme')
