@@ -852,7 +852,7 @@ document.querySelector('#app').innerHTML = `
         <!-- Feier Galerie -->
         <div class="mt-12 sm:mt-16">
           <div class="text-center mb-6 sm:mb-8">
-            <h3 class="text-lg sm:text-xl font-semibold text-gray-800 dark:text-white mb-2" data-i18n="party.gallery.title">Feier Highlights</h3>
+            <h3 class="text-lg sm:text-xl font-semibold text-gray-800 dark:text-white mb-2" data-i18n="party.gallery.title">Bilder Gallerie</h3>
             <p class="text-sm text-gray-600 dark:text-gray-300" data-i18n="party.gallery.subtitle">Die schönsten Momente unserer Hochzeitsfeier</p>
           </div>
           <div id="galleryContainer" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
@@ -939,17 +939,22 @@ document.addEventListener('DOMContentLoaded', async () => {
   // Initialize background video
   initBackgroundVideo()
 
-  // Start preloading critical images immediately
-  preloadCriticalImages()
-
   // Initialize language system first
   await initLanguage()
 
-  // Initialize gallery
-  await loadGalleryImages()
+  // PHASE 1: Load hero gallery images first (priority)
+  console.log('🎯 Phase 1: Loading hero gallery images...')
+  await loadHeroGalleryImages()
 
-  // Initialize immediate image preloading for hero gallery
-  setupImagePreloading()
+  // PHASE 2: Initialize main gallery structure (without loading images yet)
+  console.log('🎯 Phase 2: Setting up main gallery structure...')
+  await setupGalleryStructure()
+
+  // PHASE 3: Load remaining images with delay
+  console.log('🎯 Phase 3: Loading remaining gallery images...')
+  setTimeout(async () => {
+    await loadRemainingGalleryImages()
+  }, 1000) // 1 second delay to prioritize hero images
 
   // Initialer Zustand: gespeicherte Präferenz, sonst hell
   const saved = localStorage.getItem('theme')
@@ -1112,6 +1117,214 @@ const galleryImages = [
   'wowa.jpg'
 ];
 
+// Hero gallery images - these are loaded first (priority)
+const heroGalleryImages = [
+  'ringtausch.jpg',
+  'jubel.jpg', 
+  'ringtausch-2.jpg',
+  'first-sight.jpg',
+  'gruppe-vor-roemer.jpg',
+  'trauzeugen.jpg'
+];
+
+// PHASE 1: Load hero gallery images with priority
+async function loadHeroGalleryImages() {
+  const heroItems = document.querySelectorAll('#heroGalleryContainer .lazy-image');
+  
+  if (heroItems.length === 0) {
+    console.log('No hero gallery items found');
+    return;
+  }
+
+  console.log(`Loading ${heroItems.length} hero gallery images...`);
+  
+  // Load all hero images with promise tracking
+  const loadPromises = Array.from(heroItems).map((img, index) => {
+    return new Promise((resolve, reject) => {
+      const placeholder = img.parentElement.querySelector('.image-placeholder');
+      const imageSrc = img.dataset.src;
+      
+      if (!imageSrc) {
+        resolve();
+        return;
+      }
+
+      console.log(`📸 Loading hero image ${index + 1}: ${imageSrc}`);
+
+      img.onload = () => {
+        img.classList.remove('opacity-0');
+        if (placeholder) {
+          placeholder.style.display = 'none';
+        }
+        console.log(`✅ Hero image loaded: ${imageSrc}`);
+        resolve();
+      };
+      
+      img.onerror = () => {
+        if (placeholder) {
+          placeholder.innerHTML = `
+            <svg class="w-8 h-8 text-red-400 dark:text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          `;
+        }
+        console.warn(`❌ Failed to load hero image: ${imageSrc}`);
+        resolve(); // Continue even if image fails
+      };
+      
+      // Start loading the image
+      img.src = imageSrc;
+    });
+  });
+
+  // Wait for all hero images to complete loading
+  await Promise.allSettled(loadPromises);
+  console.log('🎉 All hero gallery images processing completed!');
+  
+  // Setup initial lightbox functionality for hero images
+  setupLightbox();
+}
+
+// PHASE 2: Setup main gallery structure without loading images
+async function setupGalleryStructure() {
+  const container = document.getElementById('galleryContainer');
+  const loading = document.getElementById('galleryLoading');
+  
+  if (!container || !loading) return;
+  
+  try {
+    // Create gallery items HTML without triggering image loads
+    const galleryHTML = galleryImages.map((imageName, index) => 
+      createGalleryItem(imageName, index)
+    ).join('');
+    
+    // Insert gallery items
+    container.innerHTML = galleryHTML;
+    
+    // Update loading indicator to show phase 2 status
+    loading.innerHTML = `
+      <div class="inline-flex items-center px-4 py-2 font-semibold leading-6 text-sm shadow rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 transition ease-in-out duration-150">
+        <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        </svg>
+        Hauptgalerie wird vorbereitet...
+      </div>
+    `;
+    
+    // Set up lightbox functionality (structure is ready)
+    setupLightbox();
+    
+    console.log('Gallery structure set up successfully');
+    
+  } catch (error) {
+    console.error('Error setting up gallery structure:', error);
+  }
+}
+
+// PHASE 3: Load remaining gallery images with optimized strategy
+async function loadRemainingGalleryImages() {
+  const container = document.getElementById('galleryContainer');
+  const loading = document.getElementById('galleryLoading');
+  const lazyImages = document.querySelectorAll('#galleryContainer .lazy-image');
+  
+  if (!container || lazyImages.length === 0) {
+    console.log('No gallery images to load');
+    if (loading) loading.style.display = 'none';
+    return;
+  }
+
+  console.log(`Starting to load ${lazyImages.length} main gallery images...`);
+  
+  // Update loading indicator
+  loading.innerHTML = `
+    <div class="inline-flex items-center px-4 py-2 font-semibold leading-6 text-sm shadow rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 transition ease-in-out duration-150">
+      <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+      </svg>
+      Galerie wird geladen... <span id="loadingProgress">0/${lazyImages.length}</span>
+    </div>
+  `;
+
+  let loadedCount = 0;
+  const progressElement = document.getElementById('loadingProgress');
+
+  // Load images in batches to prevent overwhelming the browser
+  const batchSize = 6; // Load 6 images at a time
+  const batches = [];
+  
+  for (let i = 0; i < lazyImages.length; i += batchSize) {
+    batches.push(Array.from(lazyImages).slice(i, i + batchSize));
+  }
+
+  for (let batchIndex = 0; batchIndex < batches.length; batchIndex++) {
+    const batch = batches[batchIndex];
+    
+    console.log(`📦 Loading batch ${batchIndex + 1}/${batches.length} (${batch.length} images)`);
+    
+    // Load all images in current batch concurrently
+    const batchPromises = batch.map((img, imgIndex) => {
+      return new Promise((resolve) => {
+        const placeholder = img.parentElement.querySelector('.image-placeholder');
+        const imageSrc = img.dataset.src;
+        
+        if (!imageSrc) {
+          resolve();
+          return;
+        }
+
+        img.onload = () => {
+          img.classList.remove('opacity-0');
+          if (placeholder) {
+            placeholder.style.display = 'none';
+          }
+          loadedCount++;
+          if (progressElement) {
+            progressElement.textContent = `${loadedCount}/${lazyImages.length}`;
+          }
+          console.log(`✅ Gallery image loaded (${loadedCount}/${lazyImages.length}): ${imageSrc}`);
+          resolve();
+        };
+        
+        img.onerror = () => {
+          if (placeholder) {
+            placeholder.innerHTML = `
+              <svg class="w-8 h-8 text-red-400 dark:text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            `;
+          }
+          loadedCount++;
+          if (progressElement) {
+            progressElement.textContent = `${loadedCount}/${lazyImages.length}`;
+          }
+          console.warn(`❌ Failed to load gallery image: ${imageSrc}`);
+          resolve();
+        };
+        
+        // Start loading the image
+        img.src = imageSrc;
+      });
+    });
+
+    // Wait for current batch to complete before starting next batch
+    await Promise.allSettled(batchPromises);
+    
+    // Small delay between batches to prevent browser overload
+    if (batchIndex < batches.length - 1) {
+      await new Promise(resolve => setTimeout(resolve, 200));
+    }
+  }
+
+  // Hide loading indicator
+  loading.style.display = 'none';
+  console.log('🎉 All gallery images loading completed!');
+  
+  // Re-setup lightbox functionality now that all images are loaded
+  setupLightbox();
+}
+
 // Function to create a gallery item with lazy loading
 function createGalleryItem(imageName, index) {
   const imagePath = `/media/${imageName}`;
@@ -1145,113 +1358,12 @@ function createGalleryItem(imageName, index) {
   `;
 }
 
-// Function to load gallery images asynchronously
-async function loadGalleryImages() {
-  const container = document.getElementById('galleryContainer');
-  const loading = document.getElementById('galleryLoading');
-  
-  if (!container || !loading) return;
-  
-  try {
-    // Create gallery items HTML
-    const galleryHTML = galleryImages.map((imageName, index) => 
-      createGalleryItem(imageName, index)
-    ).join('');
-    
-    // Insert gallery items
-    container.innerHTML = galleryHTML;
-    
-    // Hide loading indicator
-    loading.style.display = 'none';
-    
-    // Set up immediate image preloading
-    setupImagePreloading();
-    
-    // Set up lightbox functionality
-    setupLightbox();
-    
-  } catch (error) {
-    console.error('Error loading gallery:', error);
-    loading.innerHTML = `
-      <div class="text-center py-8">
-        <p class="text-red-500 dark:text-red-400">Fehler beim Laden der Bilder</p>
-      </div>
-    `;
-  }
-}
-
-// Function to preload critical images as soon as possible
-function preloadCriticalImages() {
-  // Start preloading the first few images immediately when the page loads
-  const criticalImages = galleryImages.slice(0, 10); // First 10 images
-  
-  criticalImages.forEach((imageName, index) => {
-    // Create invisible image elements to trigger download
-    const img = new Image();
-    img.src = `/media/${imageName}`;
-    
-    // Optional: Add to cache or log success
-    img.onload = () => {
-      console.log(`Critical image preloaded: ${imageName}`);
-    };
-    
-    img.onerror = () => {
-      console.warn(`Failed to preload critical image: ${imageName}`);
-    };
-  });
-  
-  // Preload remaining images after a delay to avoid blocking critical resources
-  setTimeout(() => {
-    const remainingImages = galleryImages.slice(10);
-    remainingImages.forEach((imageName, index) => {
-      // Add delay between each image to spread load
-      setTimeout(() => {
-        const img = new Image();
-        img.src = `/media/${imageName}`;
-        img.onload = () => {
-          console.log(`Background image preloaded: ${imageName}`);
-        };
-      }, index * 100); // 100ms delay between each background image
-    });
-  }, 2000); // Start background loading after 2 seconds
-}
-
-// Function to preload all images immediately in background
-function setupImagePreloading() {
-  const lazyImages = document.querySelectorAll('.lazy-image');
-  
-  // Start loading all images immediately, with a small delay between each
-  lazyImages.forEach((img, index) => {
-    // Add a small staggered delay to prevent overwhelming the browser
-    setTimeout(() => {
-      const placeholder = img.parentElement.querySelector('.image-placeholder');
-      
-      // Set src immediately to start loading
-      img.src = img.dataset.src;
-      
-      img.onload = () => {
-        img.classList.remove('opacity-0');
-        if (placeholder) {
-          placeholder.style.display = 'none';
-        }
-      };
-      
-      img.onerror = () => {
-        if (placeholder) {
-          placeholder.innerHTML = `
-            <svg class="w-8 h-8 text-red-400 dark:text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-            </svg>
-          `;
-        }
-      };
-    }, index * 50); // 50ms delay between each image start
-  });
-}
-
 // Function to set up lightbox functionality
 function setupLightbox() {
-  const galleryItems = document.querySelectorAll('.gallery-item');
+  // Get ALL gallery items (both hero and main gallery)
+  const heroGalleryItems = document.querySelectorAll('#heroGalleryContainer .gallery-item:not([data-lightbox-initialized])');
+  const mainGalleryItems = document.querySelectorAll('#galleryContainer .gallery-item:not([data-lightbox-initialized])');
+  
   const lightboxModal = document.getElementById('lightboxModal');
   const lightboxImage = document.getElementById('lightboxImage');
   const closeLightbox = document.getElementById('closeLightbox');
@@ -1261,20 +1373,22 @@ function setupLightbox() {
   
   if (!lightboxModal || !lightboxImage || !closeLightbox) return;
   
+  // Create combined images list: hero images + main gallery images
+  const allImages = [...heroGalleryImages, ...galleryImages];
   let currentImageIndex = 0;
   
   // Function to update image counter
   function updateImageCounter() {
     if (imageCounter) {
-      imageCounter.textContent = `${currentImageIndex + 1} / ${galleryImages.length}`;
+      imageCounter.textContent = `${currentImageIndex + 1} / ${allImages.length}`;
     }
   }
   
   // Function to show image at specific index
   function showImageAtIndex(index) {
-    if (index >= 0 && index < galleryImages.length) {
+    if (index >= 0 && index < allImages.length) {
       currentImageIndex = index;
-      const imagePath = `/media/${galleryImages[index]}`;
+      const imagePath = `/media/${allImages[index]}`;
       lightboxImage.src = imagePath;
       updateImageCounter();
     }
@@ -1282,20 +1396,20 @@ function setupLightbox() {
   
   // Function to show next image
   function showNextImage() {
-    const nextIndex = (currentImageIndex + 1) % galleryImages.length;
+    const nextIndex = (currentImageIndex + 1) % allImages.length;
     showImageAtIndex(nextIndex);
   }
   
   // Function to show previous image
   function showPreviousImage() {
-    const prevIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+    const prevIndex = (currentImageIndex - 1 + allImages.length) % allImages.length;
     showImageAtIndex(prevIndex);
   }
   
-  // Add click handlers to gallery items
-  galleryItems.forEach((item, index) => {
+  // Add click handlers to hero gallery items (only new ones)
+  heroGalleryItems.forEach((item, index) => {
     item.addEventListener('click', () => {
-      currentImageIndex = index;
+      currentImageIndex = index; // Hero images start at index 0
       const imageSrc = item.dataset.image;
       
       lightboxImage.src = imageSrc;
@@ -1306,93 +1420,121 @@ function setupLightbox() {
       // Prevent body scroll
       document.body.style.overflow = 'hidden';
     });
+    
+    // Mark as initialized
+    item.setAttribute('data-lightbox-initialized', 'true');
   });
   
-  // Add click handler to navigation buttons
-  if (prevImageBtn) {
-    prevImageBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      showPreviousImage();
+  // Add click handlers to main gallery items (only new ones)
+  mainGalleryItems.forEach((item, index) => {
+    item.addEventListener('click', () => {
+      currentImageIndex = heroGalleryImages.length + index; // Main gallery starts after hero images
+      const imageSrc = item.dataset.image;
+      
+      lightboxImage.src = imageSrc;
+      lightboxModal.classList.remove('hidden');
+      lightboxModal.classList.add('flex');
+      updateImageCounter();
+      
+      // Prevent body scroll
+      document.body.style.overflow = 'hidden';
     });
-  }
+    
+    // Mark as initialized
+    item.setAttribute('data-lightbox-initialized', 'true');
+  });
   
-  if (nextImageBtn) {
-    nextImageBtn.addEventListener('click', (e) => {
+  // Only add navigation handlers once
+  if (!lightboxModal.hasAttribute('data-navigation-initialized')) {
+    // Add click handler to navigation buttons
+    if (prevImageBtn) {
+      prevImageBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        showPreviousImage();
+      });
+    }
+    
+    if (nextImageBtn) {
+      nextImageBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        showNextImage();
+      });
+    }
+    
+    // Add click handler to lightbox image for next image
+    lightboxImage.addEventListener('click', (e) => {
       e.stopPropagation();
       showNextImage();
     });
-  }
-  
-  // Add click handler to lightbox image for next image
-  lightboxImage.addEventListener('click', (e) => {
-    e.stopPropagation();
-    showNextImage();
-  });
-  
-  // Add touch support for mobile devices
-  let touchStartX = 0;
-  let touchEndX = 0;
-  
-  lightboxImage.addEventListener('touchstart', (e) => {
-    touchStartX = e.changedTouches[0].screenX;
-  });
-  
-  lightboxImage.addEventListener('touchend', (e) => {
-    touchEndX = e.changedTouches[0].screenX;
-    handleSwipe();
-  });
-  
-  function handleSwipe() {
-    const swipeThreshold = 50;
-    const swipeDistance = touchEndX - touchStartX;
     
-    if (Math.abs(swipeDistance) > swipeThreshold) {
-      if (swipeDistance > 0) {
-        // Swipe right - previous image
-        showPreviousImage();
+    // Add touch support for mobile devices
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    lightboxImage.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    });
+    
+    lightboxImage.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    });
+    
+    function handleSwipe() {
+      const swipeThreshold = 50;
+      const swipeDistance = touchEndX - touchStartX;
+      
+      if (Math.abs(swipeDistance) > swipeThreshold) {
+        if (swipeDistance > 0) {
+          // Swipe right - previous image
+          showPreviousImage();
+        } else {
+          // Swipe left - next image
+          showNextImage();
+        }
       } else {
-        // Swipe left - next image
+        // Small swipe or tap - next image
         showNextImage();
       }
-    } else {
-      // Small swipe or tap - next image
-      showNextImage();
     }
-  }
-  
-  // Close lightbox functionality
-  function closeLightboxModal() {
-    lightboxModal.classList.add('hidden');
-    lightboxModal.classList.remove('flex');
-    document.body.style.overflow = 'auto';
-  }
-  
-  closeLightbox.addEventListener('click', closeLightboxModal);
-  
-  // Close on backdrop click
-  lightboxModal.addEventListener('click', (e) => {
-    if (e.target === lightboxModal) {
-      closeLightboxModal();
+    
+    // Close lightbox functionality
+    function closeLightboxModal() {
+      lightboxModal.classList.add('hidden');
+      lightboxModal.classList.remove('flex');
+      document.body.style.overflow = 'auto';
     }
-  });
-  
-  // Keyboard navigation
-  document.addEventListener('keydown', (e) => {
-    if (!lightboxModal.classList.contains('hidden')) {
-      switch(e.key) {
-        case 'Escape':
-          closeLightboxModal();
-          break;
-        case 'ArrowRight':
-        case ' ': // Spacebar
-          e.preventDefault();
-          showNextImage();
-          break;
-        case 'ArrowLeft':
-          e.preventDefault();
-          showPreviousImage();
-          break;
+    
+    closeLightbox.addEventListener('click', closeLightboxModal);
+    
+    // Close on backdrop click
+    lightboxModal.addEventListener('click', (e) => {
+      if (e.target === lightboxModal) {
+        closeLightboxModal();
       }
-    }
-  });
+    });
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (!lightboxModal.classList.contains('hidden')) {
+        switch(e.key) {
+          case 'Escape':
+            closeLightboxModal();
+            break;
+          case 'ArrowRight':
+          case ' ': // Spacebar
+            e.preventDefault();
+            showNextImage();
+            break;
+          case 'ArrowLeft':
+            e.preventDefault();
+            showPreviousImage();
+            break;
+        }
+      }
+    });
+    
+    // Mark navigation as initialized
+    lightboxModal.setAttribute('data-navigation-initialized', 'true');
+  }
 }
