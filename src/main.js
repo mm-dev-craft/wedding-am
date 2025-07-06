@@ -556,53 +556,53 @@ document.querySelector('#app').innerHTML = `
             <h3 class="text-lg sm:text-xl font-semibold text-gray-800 dark:text-white mb-2" data-i18n="ceremony.gallery.title">Trauungsmomente</h3>
             <p class="text-base sm:text-lg text-gray-600 dark:text-gray-300 transition-colors duration-300" data-i18n="ceremony.gallery.subtitle">Der Beginn unserer gemeinsamen Reise</p>
           </div>
-          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
-            <div class="aspect-square bg-gradient-to-br from-rose-100 to-pink-100 dark:from-rose-900/20 dark:to-pink-900/20 rounded-lg flex items-center justify-center group hover:scale-105 transition-transform duration-300 shadow-md">
-              <div class="text-center">
-                <svg class="w-8 h-8 sm:w-12 sm:h-12 text-rose-400 dark:text-rose-300 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                </svg>
-                <p class="text-xs text-gray-500 dark:text-gray-400" data-i18n="gallery.placeholder">Foto kommt bald</p>
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4" id="ceremony-gallery">
+            <div class="aspect-square rounded-lg overflow-hidden shadow-md hover:scale-105 transition-transform duration-300 group cursor-pointer" data-image="/media/9-preview-9.jpg">
+              <div class="w-full h-full bg-gradient-to-br from-rose-100 to-pink-100 dark:from-rose-900/20 dark:to-pink-900/20 flex items-center justify-center">
+                <div class="text-center">
+                  <div class="animate-spin w-8 h-8 border-3 border-rose-300 border-t-rose-500 rounded-full mx-auto mb-2"></div>
+                  <p class="text-xs text-gray-500 dark:text-gray-400">Lädt...</p>
+                </div>
               </div>
             </div>
-            <div class="aspect-square bg-gradient-to-br from-purple-100 to-indigo-100 dark:from-purple-900/20 dark:to-indigo-900/20 rounded-lg flex items-center justify-center group hover:scale-105 transition-transform duration-300 shadow-md">
-              <div class="text-center">
-                <svg class="w-8 h-8 sm:w-12 sm:h-12 text-purple-400 dark:text-purple-300 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                </svg>
-                <p class="text-xs text-gray-500 dark:text-gray-400" data-i18n="gallery.placeholder">Foto kommt bald</p>
+            <div class="aspect-square rounded-lg overflow-hidden shadow-md hover:scale-105 transition-transform duration-300 group cursor-pointer" data-image="/media/11-preview-11.jpg">
+              <div class="w-full h-full bg-gradient-to-br from-purple-100 to-indigo-100 dark:from-purple-900/20 dark:to-indigo-900/20 flex items-center justify-center">
+                <div class="text-center">
+                  <div class="animate-spin w-8 h-8 border-3 border-purple-300 border-t-purple-500 rounded-full mx-auto mb-2"></div>
+                  <p class="text-xs text-gray-500 dark:text-gray-400">Lädt...</p>
+                </div>
               </div>
             </div>
-            <div class="aspect-square bg-gradient-to-br from-amber-100 to-yellow-100 dark:from-amber-900/20 dark:to-yellow-900/20 rounded-lg flex items-center justify-center group hover:scale-105 transition-transform duration-300 shadow-md">
-              <div class="text-center">
-                <svg class="w-8 h-8 sm:w-12 sm:h-12 text-amber-400 dark:text-amber-300 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
-                </svg>
-                <p class="text-xs text-gray-500 dark:text-gray-400" data-i18n="gallery.placeholder">Foto kommt bald</p>
+            <div class="aspect-square rounded-lg overflow-hidden shadow-md hover:scale-105 transition-transform duration-300 group cursor-pointer" data-image="/media/13-preview-13.jpg">
+              <div class="w-full h-full bg-gradient-to-br from-amber-100 to-yellow-100 dark:from-amber-900/20 dark:to-yellow-900/20 flex items-center justify-center">
+                <div class="text-center">
+                  <div class="animate-spin w-8 h-8 border-3 border-amber-300 border-t-amber-500 rounded-full mx-auto mb-2"></div>
+                  <p class="text-xs text-gray-500 dark:text-gray-400">Lädt...</p>
+                </div>
               </div>
             </div>
-            <div class="aspect-square bg-gradient-to-br from-emerald-100 to-teal-100 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-lg flex items-center justify-center group hover:scale-105 transition-transform duration-300 shadow-md">
-              <div class="text-center">
-                <svg class="w-8 h-8 sm:w-12 sm:h-12 text-emerald-400 dark:text-emerald-300 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
-                </svg>
-                <p class="text-xs text-gray-500 dark:text-gray-400" data-i18n="gallery.placeholder">Foto kommt bald</p>
+            <div class="aspect-square rounded-lg overflow-hidden shadow-md hover:scale-105 transition-transform duration-300 group cursor-pointer" data-image="/media/18-preview-18.jpg">
+              <div class="w-full h-full bg-gradient-to-br from-emerald-100 to-teal-100 dark:from-emerald-900/20 dark:to-teal-900/20 flex items-center justify-center">
+                <div class="text-center">
+                  <div class="animate-spin w-8 h-8 border-3 border-emerald-300 border-t-emerald-500 rounded-full mx-auto mb-2"></div>
+                  <p class="text-xs text-gray-500 dark:text-gray-400">Lädt...</p>
+                </div>
               </div>
             </div>
-            <div class="aspect-square bg-gradient-to-br from-blue-100 to-cyan-100 dark:from-blue-900/20 dark:to-cyan-900/20 rounded-lg flex items-center justify-center group hover:scale-105 transition-transform duration-300 shadow-md">
-              <div class="text-center">
-                <svg class="w-8 h-8 sm:w-12 sm:h-12 text-blue-400 dark:text-blue-300 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
-                </svg>
-                <p class="text-xs text-gray-500 dark:text-gray-400" data-i18n="gallery.placeholder">Foto kommt bald</p>
+            <div class="aspect-square rounded-lg overflow-hidden shadow-md hover:scale-105 transition-transform duration-300 group cursor-pointer" data-image="/media/15-preview-15.jpg">
+              <div class="w-full h-full bg-gradient-to-br from-blue-100 to-cyan-100 dark:from-blue-900/20 dark:to-cyan-900/20 flex items-center justify-center">
+                <div class="text-center">
+                  <div class="animate-spin w-8 h-8 border-3 border-blue-300 border-t-blue-500 rounded-full mx-auto mb-2"></div>
+                  <p class="text-xs text-gray-500 dark:text-gray-400">Lädt...</p>
+                </div>
               </div>
             </div>
-            <div class="aspect-square bg-gradient-to-br from-pink-100 to-rose-100 dark:from-pink-900/20 dark:to-rose-900/20 rounded-lg flex items-center justify-center group hover:scale-105 transition-transform duration-300 shadow-md">
-              <div class="text-center">
-                <svg class="w-8 h-8 sm:w-12 sm:h-12 text-pink-400 dark:text-pink-300 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path>
-                </svg>
-                <p class="text-xs text-gray-500 dark:text-gray-400" data-i18n="gallery.placeholder">Foto kommt bald</p>
+            <div class="aspect-square rounded-lg overflow-hidden shadow-md hover:scale-105 transition-transform duration-300 group cursor-pointer" data-image="/media/21-preview-21.jpg">
+              <div class="w-full h-full bg-gradient-to-br from-pink-100 to-rose-100 dark:from-pink-900/20 dark:to-rose-900/20 flex items-center justify-center">
+                <div class="text-center">
+                  <div class="animate-spin w-8 h-8 border-3 border-pink-300 border-t-pink-500 rounded-full mx-auto mb-2"></div>
+                  <p class="text-xs text-gray-500 dark:text-gray-400">Lädt...</p>
+                </div>
               </div>
             </div>
           </div>
@@ -950,6 +950,12 @@ document.addEventListener('DOMContentLoaded', async () => {
   console.log('🎯 Phase 2: Setting up main gallery structure...')
   await setupGalleryStructure()
 
+  // PHASE 2.5: Load ceremony gallery images
+  console.log('🎯 Phase 2.5: Loading ceremony gallery images...')
+  setTimeout(async () => {
+    await loadCeremonyGalleryImages()
+  }, 500) // Load ceremony images with slight delay
+
   // PHASE 3: Load remaining images with delay
   console.log('🎯 Phase 3: Loading remaining gallery images...')
   setTimeout(async () => {
@@ -1125,6 +1131,16 @@ const heroGalleryImages = [
   'first-sight.jpg',
   'gruppe-vor-roemer.jpg',
   'trauzeugen.jpg'
+];
+
+// Ceremony gallery images - these are loaded after hero images
+const ceremonyGalleryImages = [
+  '9-preview-9.jpg',
+  '11-preview-11.jpg',
+  '13-preview-13.jpg',
+  '18-preview-18.jpg',
+  '15-preview-15.jpg',
+  '21-preview-21.jpg'
 ];
 
 // PHASE 1: Load hero gallery images with priority
@@ -1358,6 +1374,40 @@ function createGalleryItem(imageName, index) {
   `;
 }
 
+// Global lightbox state
+let globalLightboxState = {
+  allImages: [],
+  currentImageIndex: 0,
+  lightboxModal: null,
+  lightboxImage: null,
+  imageCounter: null
+};
+
+// Global function to show image at specific index
+function showImageAtIndex(index) {
+  const { allImages, lightboxImage, lightboxModal, imageCounter } = globalLightboxState;
+  
+  if (!lightboxModal || !lightboxImage || !allImages.length) return;
+  
+  if (index >= 0 && index < allImages.length) {
+    globalLightboxState.currentImageIndex = index;
+    const imagePath = `/media/${allImages[index]}`;
+    lightboxImage.src = imagePath;
+    
+    // Show lightbox
+    lightboxModal.classList.remove('hidden');
+    lightboxModal.classList.add('flex');
+    
+    // Update counter
+    if (imageCounter) {
+      imageCounter.textContent = `${index + 1} / ${allImages.length}`;
+    }
+    
+    // Prevent body scroll
+    document.body.style.overflow = 'hidden';
+  }
+}
+
 // Function to set up lightbox functionality
 function setupLightbox() {
   // Get ALL gallery items (both hero and main gallery)
@@ -1373,21 +1423,29 @@ function setupLightbox() {
   
   if (!lightboxModal || !lightboxImage || !closeLightbox) return;
   
-  // Create combined images list: hero images + main gallery images
-  const allImages = [...heroGalleryImages, ...galleryImages];
-  let currentImageIndex = 0;
+  // Create combined images list: hero images + ceremony images + main gallery images
+  const allImages = [...heroGalleryImages, ...ceremonyGalleryImages, ...galleryImages];
+  
+  // Update global lightbox state
+  globalLightboxState = {
+    allImages,
+    currentImageIndex: 0,
+    lightboxModal,
+    lightboxImage,
+    imageCounter
+  };
   
   // Function to update image counter
   function updateImageCounter() {
     if (imageCounter) {
-      imageCounter.textContent = `${currentImageIndex + 1} / ${allImages.length}`;
+      imageCounter.textContent = `${globalLightboxState.currentImageIndex + 1} / ${allImages.length}`;
     }
   }
   
-  // Function to show image at specific index
-  function showImageAtIndex(index) {
+  // Function to show image at specific index (local version)
+  function showImageAtIndexLocal(index) {
     if (index >= 0 && index < allImages.length) {
-      currentImageIndex = index;
+      globalLightboxState.currentImageIndex = index;
       const imagePath = `/media/${allImages[index]}`;
       lightboxImage.src = imagePath;
       updateImageCounter();
@@ -1396,20 +1454,20 @@ function setupLightbox() {
   
   // Function to show next image
   function showNextImage() {
-    const nextIndex = (currentImageIndex + 1) % allImages.length;
-    showImageAtIndex(nextIndex);
+    const nextIndex = (globalLightboxState.currentImageIndex + 1) % allImages.length;
+    showImageAtIndexLocal(nextIndex);
   }
   
   // Function to show previous image
   function showPreviousImage() {
-    const prevIndex = (currentImageIndex - 1 + allImages.length) % allImages.length;
-    showImageAtIndex(prevIndex);
+    const prevIndex = (globalLightboxState.currentImageIndex - 1 + allImages.length) % allImages.length;
+    showImageAtIndexLocal(prevIndex);
   }
   
   // Add click handlers to hero gallery items (only new ones)
   heroGalleryItems.forEach((item, index) => {
     item.addEventListener('click', () => {
-      currentImageIndex = index; // Hero images start at index 0
+      globalLightboxState.currentImageIndex = index; // Hero images start at index 0
       const imageSrc = item.dataset.image;
       
       lightboxImage.src = imageSrc;
@@ -1428,7 +1486,7 @@ function setupLightbox() {
   // Add click handlers to main gallery items (only new ones)
   mainGalleryItems.forEach((item, index) => {
     item.addEventListener('click', () => {
-      currentImageIndex = heroGalleryImages.length + index; // Main gallery starts after hero images
+      globalLightboxState.currentImageIndex = heroGalleryImages.length + ceremonyGalleryImages.length + index; // Main gallery starts after hero and ceremony images
       const imageSrc = item.dataset.image;
       
       lightboxImage.src = imageSrc;
@@ -1537,4 +1595,142 @@ function setupLightbox() {
     // Mark navigation as initialized
     lightboxModal.setAttribute('data-navigation-initialized', 'true');
   }
+}
+
+// Function to load ceremony gallery images asynchronously
+async function loadCeremonyGalleryImages() {
+  const gallery = document.getElementById('ceremony-gallery')
+  if (!gallery) return
+
+  const imageContainers = gallery.querySelectorAll('[data-image]')
+  
+  // Load images with staggered animation using existing structure
+  imageContainers.forEach((container, index) => {
+    setTimeout(async () => {
+      const imageSrc = container.getAttribute('data-image')
+      if (!imageSrc) return
+
+      // Extract filename from path
+      const imageName = imageSrc.replace('/media/', '')
+      
+      try {
+        // Create image element using same pattern as main gallery
+        const img = new Image()
+        img.src = imageSrc
+        img.className = 'w-full h-full object-cover transition-all duration-500 opacity-0 scale-110 group-hover:scale-125'
+        img.alt = `Trauungsmoment ${index + 1}`
+        
+        // Wait for image to load
+        await new Promise((resolve, reject) => {
+          img.onload = resolve
+          img.onerror = reject
+        })
+
+        // Replace placeholder with image and mark as gallery item
+        container.innerHTML = ''
+        container.appendChild(img)
+        container.classList.add('gallery-item')
+        container.setAttribute('data-ceremony-index', index)
+        
+        // Trigger fade-in animation
+        requestAnimationFrame(() => {
+          img.style.opacity = '1'
+          img.style.transform = 'scale(1)'
+        })
+
+      } catch (error) {
+        console.error(`Failed to load ceremony image ${imageSrc}:`, error)
+        
+        // Show error state with retry option
+        const errorContent = document.createElement('div')
+        errorContent.className = 'w-full h-full flex flex-col items-center justify-center text-center p-4'
+        errorContent.innerHTML = `
+          <svg class="w-8 h-8 text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+          <p class="text-xs text-gray-500 mb-2">Fehler beim Laden</p>
+          <button class="text-xs text-blue-500 hover:text-blue-700 underline">Erneut versuchen</button>
+        `
+        
+        const retryButton = errorContent.querySelector('button')
+        retryButton.addEventListener('click', (e) => {
+          e.stopPropagation()
+          // Reset to loading state and retry
+          container.innerHTML = `
+            <div class="w-full h-full bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-800 flex items-center justify-center">
+              <div class="text-center">
+                <div class="animate-spin w-8 h-8 border-3 border-gray-300 border-t-gray-500 rounded-full mx-auto mb-2"></div>
+                <p class="text-xs text-gray-500 dark:text-gray-400">Lädt...</p>
+              </div>
+            </div>
+          `
+          // Retry after a short delay
+          setTimeout(() => loadCeremonyImageContainer(container, imageSrc, index), 1000)
+        })
+        
+        container.innerHTML = ''
+        container.appendChild(errorContent)
+      }
+    }, index * 200) // Stagger loading by 200ms for each image
+  })
+
+  // After all images are loaded, setup lightbox for ceremony gallery
+  setTimeout(() => {
+    setupCeremonyLightbox()
+  }, ceremonyGalleryImages.length * 200 + 500)
+}
+
+// Helper function to load individual ceremony image container
+async function loadCeremonyImageContainer(container, imageSrc, index) {
+  try {
+    const img = new Image()
+    img.src = imageSrc
+    img.className = 'w-full h-full object-cover transition-all duration-500 opacity-0 scale-110 group-hover:scale-125'
+    img.alt = `Trauungsmoment ${index + 1}`
+    
+    await new Promise((resolve, reject) => {
+      img.onload = resolve
+      img.onerror = reject
+    })
+
+    container.innerHTML = ''
+    container.appendChild(img)
+    container.classList.add('gallery-item')
+    container.setAttribute('data-ceremony-index', index)
+    
+    requestAnimationFrame(() => {
+      img.style.opacity = '1'
+      img.style.transform = 'scale(1)'
+    })
+  } catch (error) {
+    console.error(`Failed to load ceremony image ${imageSrc}:`, error)
+  }
+}
+
+// Function to setup lightbox for ceremony gallery items
+function setupCeremonyLightbox() {
+  const ceremonyGalleryItems = document.querySelectorAll('#ceremony-gallery .gallery-item:not([data-lightbox-initialized])')
+  
+  if (ceremonyGalleryItems.length === 0) return
+
+  const lightboxModal = document.getElementById('lightboxModal')
+  const lightboxImage = document.getElementById('lightboxImage')
+  
+  if (!lightboxModal || !lightboxImage) return
+
+  // Add click handlers to ceremony gallery items
+  ceremonyGalleryItems.forEach((item, index) => {
+    item.addEventListener('click', () => {
+      // Calculate the position in the combined image list
+      // Position = heroImages + ceremonyImages + mainGalleryImages up to clicked index
+      const ceremonyIndex = parseInt(item.getAttribute('data-ceremony-index'))
+      const totalIndex = heroGalleryImages.length + ceremonyIndex
+      
+      // Use existing lightbox functionality
+      showImageAtIndex(totalIndex)
+    })
+    
+    // Mark as initialized
+    item.setAttribute('data-lightbox-initialized', 'true')
+  })
 }
