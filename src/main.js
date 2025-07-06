@@ -445,10 +445,10 @@ document.querySelector('#app').innerHTML = `
             </div>
           </div>
           <div class="aspect-square bg-gradient-to-br from-emerald-100 to-teal-100 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-lg overflow-hidden group hover:scale-105 transition-transform duration-300 shadow-md cursor-pointer gallery-item"
-               data-image="/media/gruppe-vor-römer.jpg">
+               data-image="/media/gruppe-vor-roemer.jpg">
             <div class="w-full h-full relative">
               <img class="w-full h-full object-cover opacity-0 transition-opacity duration-500 lazy-image" 
-                   data-src="/media/gruppe-vor-römer.jpg" 
+                   data-src="/media/gruppe-vor-roemer.jpg" 
                    loading="lazy">
               <!-- Loading placeholder -->
               <div class="absolute inset-0 flex items-center justify-center image-placeholder">
@@ -703,66 +703,6 @@ document.querySelector('#app').innerHTML = `
           </p>
         </div>
         
-        <!-- Fotos Galerie -->
-        <div class="mt-12 sm:mt-16">
-          <div class="text-center mb-6 sm:mb-8">
-            <h3 class="text-lg sm:text-xl font-semibold text-gray-800 dark:text-white mb-2" data-i18n="photos.gallery.title">Fotogalerie</h3>
-            <p class="text-sm text-gray-600 dark:text-gray-300" data-i18n="photos.gallery.subtitle">Wunderschöne Aufnahmen unseres besonderen Tages</p>
-          </div>
-          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
-            <div class="aspect-square bg-gradient-to-br from-indigo-100 to-purple-100 dark:from-indigo-900/20 dark:to-purple-900/20 rounded-lg flex items-center justify-center group hover:scale-105 transition-transform duration-300 shadow-md">
-              <div class="text-center">
-                <svg class="w-8 h-8 sm:w-12 sm:h-12 text-indigo-400 dark:text-indigo-300 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path>
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                </svg>
-                <p class="text-xs text-gray-500 dark:text-gray-400" data-i18n="gallery.placeholder">Foto kommt bald</p>
-              </div>
-            </div>
-            <div class="aspect-square bg-gradient-to-br from-rose-100 to-pink-100 dark:from-rose-900/20 dark:to-pink-900/20 rounded-lg flex items-center justify-center group hover:scale-105 transition-transform duration-300 shadow-md">
-              <div class="text-center">
-                <svg class="w-8 h-8 sm:w-12 sm:h-12 text-rose-400 dark:text-rose-300 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                </svg>
-                <p class="text-xs text-gray-500 dark:text-gray-400" data-i18n="gallery.placeholder">Foto kommt bald</p>
-              </div>
-            </div>
-            <div class="aspect-square bg-gradient-to-br from-emerald-100 to-teal-100 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-lg flex items-center justify-center group hover:scale-105 transition-transform duration-300 shadow-md">
-              <div class="text-center">
-                <svg class="w-8 h-8 sm:w-12 sm:h-12 text-emerald-400 dark:text-emerald-300 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2m-9 2v12a2 2 0 002 2h6a2 2 0 002-2V6H7z"></path>
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 11v6m4-6v6"></path>
-                </svg>
-                <p class="text-xs text-gray-500 dark:text-gray-400" data-i18n="gallery.placeholder">Foto kommt bald</p>
-              </div>
-            </div>
-            <div class="aspect-square bg-gradient-to-br from-yellow-100 to-orange-100 dark:from-yellow-900/20 dark:to-orange-900/20 rounded-lg flex items-center justify-center group hover:scale-105 transition-transform duration-300 shadow-md">
-              <div class="text-center">
-                <svg class="w-8 h-8 sm:w-12 sm:h-12 text-yellow-400 dark:text-yellow-300 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
-                </svg>
-                <p class="text-xs text-gray-500 dark:text-gray-400" data-i18n="gallery.placeholder">Foto kommt bald</p>
-              </div>
-            </div>
-            <div class="aspect-square bg-gradient-to-br from-cyan-100 to-blue-100 dark:from-cyan-900/20 dark:to-blue-900/20 rounded-lg flex items-center justify-center group hover:scale-105 transition-transform duration-300 shadow-md">
-              <div class="text-center">
-                <svg class="w-8 h-8 sm:w-12 sm:h-12 text-cyan-400 dark:text-cyan-300 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
-                </svg>
-                <p class="text-xs text-gray-500 dark:text-gray-400" data-i18n="gallery.placeholder">Foto kommt bald</p>
-              </div>
-            </div>
-            <div class="aspect-square bg-gradient-to-br from-purple-100 to-indigo-100 dark:from-purple-900/20 dark:to-indigo-900/20 rounded-lg flex items-center justify-center group hover:scale-105 transition-transform duration-300 shadow-md">
-              <div class="text-center">
-                <svg class="w-8 h-8 sm:w-12 sm:h-12 text-purple-400 dark:text-purple-300 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path>
-                </svg>
-                <p class="text-xs text-gray-500 dark:text-gray-400" data-i18n="gallery.placeholder">Foto kommt bald</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        
         <!-- Danksagung -->
         <div class="mt-16 sm:mt-20">
           <div class="bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 transition-colors duration-300">
@@ -999,14 +939,17 @@ document.addEventListener('DOMContentLoaded', async () => {
   // Initialize background video
   initBackgroundVideo()
 
+  // Start preloading critical images immediately
+  preloadCriticalImages()
+
   // Initialize language system first
   await initLanguage()
 
   // Initialize gallery
   await loadGalleryImages()
 
-  // Initialize lazy loading for hero gallery
-  setupLazyLoading()
+  // Initialize immediate image preloading for hero gallery
+  setupImagePreloading()
 
   // Initialer Zustand: gespeicherte Präferenz, sonst hell
   const saved = localStorage.getItem('theme')
@@ -1070,6 +1013,66 @@ document.addEventListener('click', function(e) {
 
 // Gallery functionality for loading media asynchronously
 const galleryImages = [
+  '1-Preview-1.jpg',
+  '2-Preview-2.jpg',
+  '28-Preview-28.jpg',
+  '30-Preview-30.jpg',
+  '31-Preview-31.jpg',
+  '32-Preview-32.jpg',
+  '33-Preview-33.jpg',
+  '34-Preview-34.jpg',
+  '35-Preview-35.jpg',
+  '36-Preview-36.jpg',
+  '37-Preview-37.jpg',
+  '39-Preview-39.jpg',
+  '4-Preview-4.jpg',
+  '41-Preview-41.jpg',
+  '42-Preview-42.jpg',
+  '43-Preview-43.jpg',
+  '44-Preview-44.jpg',
+  '45-Preview-45.jpg',
+  '46-Preview-46.jpg',
+  '47-Preview-47.jpg',
+  '48-Preview-48.jpg',
+  '49-Preview-49.jpg',
+  '5-Preview-5.jpg',
+  '50-Preview-50.jpg',
+  '51-Preview-51.jpg',
+  '52-Preview-52.jpg',
+  '53-Preview-53.jpg',
+  '55-Preview-55.jpg',
+  '56-Preview-56.jpg',
+  '57-Preview-57.jpg',
+  '58-Preview-58.jpg',
+  '59-Preview-59.jpg',
+  '6-Preview-6.jpg',
+  '60-Preview-60.jpg',
+  '61-Preview-61.jpg',
+  '62-Preview-62.jpg',
+  '63-Preview-63.jpg',
+  '64-Preview-64.jpg',
+  '65-Preview-65.jpg',
+  '66-Preview-66.jpg',
+  '67-Preview-67.jpg',
+  '68-Preview-68.jpg',
+  '69-Preview-69.jpg',
+  '7-Preview-7.jpg',
+  '70-Preview-70.jpg',
+  '71-Preview-71.jpg',
+  '72-Preview-72.jpg',
+  '73-Preview-73.jpg',
+  '74-Preview-74.jpg',
+  '75-Preview-75.jpg',
+  '76-Preview-76.jpg',
+  '77-Preview-77.jpg',
+  '78-Preview-78.jpg',
+  '79-Preview-79.jpg',
+  '8-Preview-8.jpg',
+  '80-Preview-80.jpg',
+  '81-Preview-81.jpg',
+  '82-Preview-82.jpg',
+  '83-Preview-83.jpg',
+  '85-Preview-85.jpg',
   'alena.jpg',
   'aljona-anna-michell-geschenk.jpg',
   'aljona-kristina.jpg',
@@ -1102,6 +1105,7 @@ const galleryImages = [
   'tisch-anstoßen.jpg',
   'tisch.jpg',
   'torte.jpg',
+  'verheiratet.jpg',
   'viktor-rede.jpg',
   'viktor.jpg',
   'willkommenschild.jpg',
@@ -1160,8 +1164,8 @@ async function loadGalleryImages() {
     // Hide loading indicator
     loading.style.display = 'none';
     
-    // Set up intersection observer for lazy loading
-    setupLazyLoading();
+    // Set up immediate image preloading
+    setupImagePreloading();
     
     // Set up lightbox functionality
     setupLightbox();
@@ -1176,39 +1180,73 @@ async function loadGalleryImages() {
   }
 }
 
-// Function to set up lazy loading with Intersection Observer
-function setupLazyLoading() {
-  const lazyImages = document.querySelectorAll('.lazy-image');
+// Function to preload critical images as soon as possible
+function preloadCriticalImages() {
+  // Start preloading the first few images immediately when the page loads
+  const criticalImages = galleryImages.slice(0, 10); // First 10 images
   
-  const imageObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const img = entry.target;
-        const placeholder = img.parentElement.querySelector('.image-placeholder');
-        
-        img.src = img.dataset.src;
-        img.onload = () => {
-          img.classList.remove('opacity-0');
-          if (placeholder) {
-            placeholder.style.display = 'none';
-          }
-        };
-        img.onerror = () => {
-          if (placeholder) {
-            placeholder.innerHTML = `
-              <svg class="w-8 h-8 text-red-400 dark:text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-              </svg>
-            `;
-          }
-        };
-        
-        observer.unobserve(img);
-      }
-    });
+  criticalImages.forEach((imageName, index) => {
+    // Create invisible image elements to trigger download
+    const img = new Image();
+    img.src = `/media/${imageName}`;
+    
+    // Optional: Add to cache or log success
+    img.onload = () => {
+      console.log(`Critical image preloaded: ${imageName}`);
+    };
+    
+    img.onerror = () => {
+      console.warn(`Failed to preload critical image: ${imageName}`);
+    };
   });
   
-  lazyImages.forEach(img => imageObserver.observe(img));
+  // Preload remaining images after a delay to avoid blocking critical resources
+  setTimeout(() => {
+    const remainingImages = galleryImages.slice(10);
+    remainingImages.forEach((imageName, index) => {
+      // Add delay between each image to spread load
+      setTimeout(() => {
+        const img = new Image();
+        img.src = `/media/${imageName}`;
+        img.onload = () => {
+          console.log(`Background image preloaded: ${imageName}`);
+        };
+      }, index * 100); // 100ms delay between each background image
+    });
+  }, 2000); // Start background loading after 2 seconds
+}
+
+// Function to preload all images immediately in background
+function setupImagePreloading() {
+  const lazyImages = document.querySelectorAll('.lazy-image');
+  
+  // Start loading all images immediately, with a small delay between each
+  lazyImages.forEach((img, index) => {
+    // Add a small staggered delay to prevent overwhelming the browser
+    setTimeout(() => {
+      const placeholder = img.parentElement.querySelector('.image-placeholder');
+      
+      // Set src immediately to start loading
+      img.src = img.dataset.src;
+      
+      img.onload = () => {
+        img.classList.remove('opacity-0');
+        if (placeholder) {
+          placeholder.style.display = 'none';
+        }
+      };
+      
+      img.onerror = () => {
+        if (placeholder) {
+          placeholder.innerHTML = `
+            <svg class="w-8 h-8 text-red-400 dark:text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          `;
+        }
+      };
+    }, index * 50); // 50ms delay between each image start
+  });
 }
 
 // Function to set up lightbox functionality
