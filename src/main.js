@@ -385,7 +385,7 @@ document.querySelector('#app').innerHTML = `
       <div class="max-w-6xl mx-auto px-4">
         <div class="text-center mb-6">
           <h3 class="text-lg sm:text-xl font-semibold text-gray-800 dark:text-white mb-2" data-i18n="hero.gallery.title">Unsere schönsten Momente</h3>
-          <p class="text-sm text-gray-600 dark:text-gray-300" data-i18n="hero.gallery.subtitle">Erinnerungen, die uns verbinden</p>
+          <p class="text-base sm:text-lg text-gray-600 dark:text-gray-300 transition-colors duration-300" data-i18n="hero.gallery.subtitle">Erinnerungen, die uns verbinden</p>
         </div>
         <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4" id="heroGalleryContainer">
           <div class="aspect-square bg-gradient-to-br from-rose-100 to-pink-100 dark:from-rose-900/20 dark:to-pink-900/20 rounded-lg overflow-hidden group hover:scale-105 transition-transform duration-300 shadow-md cursor-pointer gallery-item"
@@ -554,7 +554,7 @@ document.querySelector('#app').innerHTML = `
         <div class="mt-12 sm:mt-16">
           <div class="text-center mb-6 sm:mb-8">
             <h3 class="text-lg sm:text-xl font-semibold text-gray-800 dark:text-white mb-2" data-i18n="ceremony.gallery.title">Trauungsmomente</h3>
-            <p class="text-sm text-gray-600 dark:text-gray-300" data-i18n="ceremony.gallery.subtitle">Der Beginn unserer gemeinsamen Reise</p>
+            <p class="text-base sm:text-lg text-gray-600 dark:text-gray-300 transition-colors duration-300" data-i18n="ceremony.gallery.subtitle">Der Beginn unserer gemeinsamen Reise</p>
           </div>
           <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
             <div class="aspect-square bg-gradient-to-br from-rose-100 to-pink-100 dark:from-rose-900/20 dark:to-pink-900/20 rounded-lg flex items-center justify-center group hover:scale-105 transition-transform duration-300 shadow-md">
@@ -761,6 +761,60 @@ document.querySelector('#app').innerHTML = `
             </div>
           </div>
         </div>
+        
+        <!-- Galerie -->
+        <div class="mt-12 sm:mt-16">
+          <div class="text-center mb-6 sm:mb-8">
+            <h3 class="text-lg sm:text-xl font-semibold text-gray-800 dark:text-white mb-2" data-i18n="party.gallery.title">Bilder Gallerie</h3>
+            <p class="text-base sm:text-lg text-gray-600 dark:text-gray-300 transition-colors duration-300" data-i18n="party.gallery.subtitle">Die schönsten Momente unserer Hochzeitsfeier</p>
+          </div>
+          <div id="galleryContainer" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+            <!-- Gallery items will be loaded here dynamically -->
+          </div>
+          
+          <!-- Loading indicator -->
+          <div id="galleryLoading" class="text-center py-8">
+            <div class="inline-flex items-center px-4 py-2 font-semibold leading-6 text-sm shadow rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 transition ease-in-out duration-150 cursor-not-allowed">
+              <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              </svg>
+              Bilder werden geladen...
+            </div>
+          </div>
+          
+          <!-- Lightbox Modal -->
+          <div id="lightboxModal" class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden items-center justify-center p-4">
+            <div class="relative max-w-4xl max-h-full">
+              <button id="closeLightbox" class="absolute top-4 right-4 text-white hover:text-gray-300 z-10">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+              </button>
+              
+              <!-- Previous Image Button -->
+              <button id="prevImage" class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-300 z-10 bg-black bg-opacity-50 rounded-full p-2 hover:bg-opacity-70 transition-all duration-200">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+              </button>
+              
+              <!-- Next Image Button -->
+              <button id="nextImage" class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-300 z-10 bg-black bg-opacity-50 rounded-full p-2 hover:bg-opacity-70 transition-all duration-200">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </button>
+              
+              <img id="lightboxImage" class="max-w-full max-h-full object-contain rounded-lg cursor-pointer" src="" alt="">
+              
+              <!-- Image Counter -->
+              <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white bg-black bg-opacity-50 px-3 py-1 rounded-full text-sm">
+                <span id="imageCounter">1 / 1</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -845,60 +899,6 @@ document.querySelector('#app').innerHTML = `
                 • Parkplätze vorhanden<br>
                 • Dresscode: Festlich
               </p>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Feier Galerie -->
-        <div class="mt-12 sm:mt-16">
-          <div class="text-center mb-6 sm:mb-8">
-            <h3 class="text-lg sm:text-xl font-semibold text-gray-800 dark:text-white mb-2" data-i18n="party.gallery.title">Bilder Gallerie</h3>
-            <p class="text-sm text-gray-600 dark:text-gray-300" data-i18n="party.gallery.subtitle">Die schönsten Momente unserer Hochzeitsfeier</p>
-          </div>
-          <div id="galleryContainer" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
-            <!-- Gallery items will be loaded here dynamically -->
-          </div>
-          
-          <!-- Loading indicator -->
-          <div id="galleryLoading" class="text-center py-8">
-            <div class="inline-flex items-center px-4 py-2 font-semibold leading-6 text-sm shadow rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 transition ease-in-out duration-150 cursor-not-allowed">
-              <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-              </svg>
-              Bilder werden geladen...
-            </div>
-          </div>
-          
-          <!-- Lightbox Modal -->
-          <div id="lightboxModal" class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden items-center justify-center p-4">
-            <div class="relative max-w-4xl max-h-full">
-              <button id="closeLightbox" class="absolute top-4 right-4 text-white hover:text-gray-300 z-10">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                </svg>
-              </button>
-              
-              <!-- Previous Image Button -->
-              <button id="prevImage" class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-300 z-10 bg-black bg-opacity-50 rounded-full p-2 hover:bg-opacity-70 transition-all duration-200">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-                </svg>
-              </button>
-              
-              <!-- Next Image Button -->
-              <button id="nextImage" class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-300 z-10 bg-black bg-opacity-50 rounded-full p-2 hover:bg-opacity-70 transition-all duration-200">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                </svg>
-              </button>
-              
-              <img id="lightboxImage" class="max-w-full max-h-full object-contain rounded-lg cursor-pointer" src="" alt="">
-              
-              <!-- Image Counter -->
-              <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white bg-black bg-opacity-50 px-3 py-1 rounded-full text-sm">
-                <span id="imageCounter">1 / 1</span>
-              </div>
             </div>
           </div>
         </div>
