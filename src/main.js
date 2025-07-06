@@ -1155,201 +1155,201 @@ const galleryImages = [
   'heiko-ankommen.jpg',
   'heiko-kristina-anna-michell.jpg',
   'heiko-michell.jpg',
-  '/media/IMG_4335.JPG',
-  '/media/IMG_4336.JPG',
-  '/media/IMG_4337.JPG',
-  '/media/IMG_4338.JPG',
-  '/media/IMG_4339.JPG',
-  '/media/IMG_4340.JPG',
-  '/media/IMG_4341.JPG',
-  '/media/IMG_4343.JPG',
-  '/media/IMG_4344.JPG',
-  '/media/IMG_4345.JPG',
-  '/media/IMG_4347.JPG',
-  '/media/IMG_4348.JPG',
-  '/media/IMG_4349.JPG',
-  '/media/IMG_4350.JPG',
-  '/media/IMG_4351.JPG',
-  '/media/IMG_4352.JPG',
-  '/media/IMG_4353.JPG',
-  '/media/IMG_4354.JPG',
-  '/media/IMG_4355.JPG',
-  '/media/IMG_4356.JPG',
-  '/media/IMG_4357.JPG',
-  '/media/IMG_4358.JPG',
-  '/media/IMG_4359.JPG',
-  '/media/IMG_4360.JPG',
-  '/media/IMG_4361.JPG',
-  '/media/IMG_4362.JPG',
-  '/media/IMG_4363.JPG',
-  '/media/IMG_4364.JPG',
-  '/media/IMG_4365.JPG',
-  '/media/IMG_4366.JPG',
-  '/media/IMG_4369.JPG',
-  '/media/IMG_4376.JPG',
-  '/media/IMG_4377.JPG',
-  '/media/IMG_4378.JPG',
-  '/media/IMG_4380.JPG',
-  '/media/IMG_4381.JPG',
-  '/media/IMG_4382.JPG',
-  '/media/IMG_4383.JPG',
-  '/media/IMG_4384.JPG',
-  '/media/IMG_4385.JPG',
-  '/media/IMG_4386.JPG',
-  '/media/IMG_4387.JPG',
-  '/media/IMG_4388.JPG',
-  '/media/IMG_4389.JPG',
-  '/media/IMG_4390.JPG',
-  '/media/IMG_4391.JPG',
-  '/media/IMG_4393.JPG',
-  '/media/IMG_4395.JPG',
-  '/media/IMG_4396.JPG',
-  '/media/IMG_4398.JPG',
-  '/media/IMG_4399.JPG',
-  '/media/IMG_4400.JPG',
-  '/media/IMG_4401.JPG',
-  '/media/IMG_4402.JPG',
-  '/media/IMG_4403.JPG',
-  '/media/IMG_4404.JPG',
-  '/media/IMG_4405.JPG',
-  '/media/IMG_4406.JPG',
-  '/media/IMG_4408.JPG',
-  '/media/IMG_4409.JPG',
-  '/media/IMG_4410.JPG',
-  '/media/IMG_4411.JPG',
-  '/media/IMG_4412.JPG',
-  '/media/IMG_4413.JPG',
-  '/media/IMG_4414.JPG',
-  '/media/IMG_4415.JPG',
-  '/media/IMG_4416.JPG',
-  '/media/IMG_4418.JPG',
-  '/media/IMG_4419.JPG',
-  '/media/IMG_4420.JPG',
-  '/media/IMG_4422.JPG',
-  '/media/IMG_4424.JPG',
-  '/media/IMG_4426.JPG',
-  '/media/IMG_4427.JPG',
-  '/media/IMG_4428.JPG',
-  '/media/IMG_4430.JPG',
-  '/media/IMG_4431.JPG',
-  '/media/IMG_4432.JPG',
-  '/media/IMG_4435.JPG',
-  '/media/IMG_4436.JPG',
-  '/media/IMG_4437.JPG',
-  '/media/IMG_4438.JPG',
-  '/media/IMG_4439.JPG',
-  '/media/IMG_4440.JPG',
-  '/media/IMG_4441.JPG',
-  '/media/IMG_4442.JPG',
-  '/media/IMG_4447.JPG',
-  '/media/IMG_4448.JPG',
-  '/media/IMG_4449.JPG',
-  '/media/IMG_4451.JPG',
-  '/media/IMG_4452.JPG',
-  '/media/IMG_4453.JPG',
-  '/media/IMG_4454.JPG',
-  '/media/IMG_4455.JPG',
-  '/media/IMG_4456.JPG',
-  '/media/IMG_4457.JPG',
-  '/media/IMG_4458.JPG',
-  '/media/IMG_4459.JPG',
-  '/media/IMG_4460.JPG',
-  '/media/IMG_4461.JPG',
-  '/media/IMG_4462.JPG',
-  '/media/IMG_4463.JPG',
-  '/media/IMG_4464.JPG',
-  '/media/IMG_4465.JPG',
-  '/media/IMG_4466.JPG',
-  '/media/IMG_4467.JPG',
-  '/media/IMG_4468.JPG',
-  '/media/IMG_4469.JPG',
-  '/media/IMG_4470.JPG',
-  '/media/IMG_4471.JPG',
-  '/media/IMG_4472.JPG',
-  '/media/IMG_4474.JPG',
-  '/media/IMG_4478.JPG',
-  '/media/IMG_4479.JPG',
-  '/media/IMG_4480.JPG',
-  '/media/IMG_4481.JPG',
-  '/media/IMG_4482.JPG',
-  '/media/IMG_4483.JPG',
-  '/media/IMG_4484.JPG',
-  '/media/IMG_4485.JPG',
-  '/media/IMG_4487.JPG',
-  '/media/IMG_4488.JPG',
-  '/media/IMG_4489.JPG',
-  '/media/IMG_4490.JPG',
-  '/media/IMG_4491.JPG',
-  '/media/IMG_4492.JPG',
-  '/media/IMG_4493.JPG',
-  '/media/IMG_4494.JPG',
-  '/media/IMG_4496.JPG',
-  '/media/IMG_4497.JPG',
-  '/media/IMG_4499.JPG',
-  '/media/IMG_4500.JPG',
-  '/media/IMG_4502.JPG',
-  '/media/IMG_4505.JPG',
-  '/media/IMG_4506.JPG',
-  '/media/IMG_4508.JPG',
-  '/media/IMG_4509.JPG',
-  '/media/IMG_4510.JPG',
-  '/media/IMG_4511.JPG',
-  '/media/IMG_4512.JPG',
-  '/media/IMG_4513.JPG',
-  '/media/IMG_4515.JPG',
-  '/media/IMG_4517.JPG',
-  '/media/IMG_4518.JPG',
-  '/media/IMG_4520.JPG',
-  '/media/IMG_4522.JPG',
-  '/media/IMG_4523.JPG',
-  '/media/IMG_4524.JPG',
-  '/media/IMG_4525.JPG',
-  '/media/IMG_4528.JPG',
-  '/media/IMG_4529.JPG',
-  '/media/IMG_4530.JPG',
-  '/media/IMG_4531.JPG',
-  '/media/IMG_4532.JPG',
-  '/media/IMG_4533.JPG',
-  '/media/IMG_4534.JPG',
-  '/media/IMG_4535.JPG',
-  '/media/IMG_4536.JPG',
-  '/media/IMG_4537.JPG',
-  '/media/IMG_4539.JPG',
-  '/media/IMG_4540.JPG',
-  '/media/IMG_4541.JPG',
-  '/media/IMG_4543.JPG',
-  '/media/IMG_4544.JPG',
-  '/media/IMG_4546.JPG',
-  '/media/IMG_4547.JPG',
-  '/media/IMG_4548.JPG',
-  '/media/IMG_4549.JPG',
-  '/media/IMG_4550.JPG',
-  '/media/IMG_4551.JPG',
-  '/media/IMG_4552.JPG',
-  '/media/IMG_4554.JPG',
-  '/media/IMG_4558.JPG',
-  '/media/IMG_4559.JPG',
-  '/media/IMG_4572.JPG',
-  '/media/IMG_4574.JPG',
-  '/media/IMG_4575.JPG',
-  '/media/IMG_4576.JPG',
-  '/media/IMG_4577.JPG',
-  '/media/IMG_4578.JPG',
-  '/media/IMG_4580.JPG',
-  '/media/9-Preview-9.jpg',
-  '/media/10-Preview-10.jpg',
-  '/media/12-Preview-12.jpg',
-  '/media/14-Preview-14.jpg',
-  '/media/16-Preview-16.jpg',
-  '/media/17-Preview-17.jpg',
-  '/media/19-Preview-19.jpg',
-  '/media/20-Preview-20.jpg',
-  '/media/22-Preview-22.jpg',
-  '/media/23-Preview-23.jpg',
-  '/media/24-Preview-24.jpg',
-  '/media/25-Preview-25.jpg',
-  '/media/26-Preview-26.jpg',
-  '/media/27-Preview-27.jpg',
+  '/IMG_4335.JPG',
+  '/IMG_4336.JPG',
+  '/IMG_4337.JPG',
+  '/IMG_4338.JPG',
+  '/IMG_4339.JPG',
+  '/IMG_4340.JPG',
+  '/IMG_4341.JPG',
+  '/IMG_4343.JPG',
+  '/IMG_4344.JPG',
+  '/IMG_4345.JPG',
+  '/IMG_4347.JPG',
+  '/IMG_4348.JPG',
+  '/IMG_4349.JPG',
+  '/IMG_4350.JPG',
+  '/IMG_4351.JPG',
+  '/IMG_4352.JPG',
+  '/IMG_4353.JPG',
+  '/IMG_4354.JPG',
+  '/IMG_4355.JPG',
+  '/IMG_4356.JPG',
+  '/IMG_4357.JPG',
+  '/IMG_4358.JPG',
+  '/IMG_4359.JPG',
+  '/IMG_4360.JPG',
+  '/IMG_4361.JPG',
+  '/IMG_4362.JPG',
+  '/IMG_4363.JPG',
+  '/IMG_4364.JPG',
+  '/IMG_4365.JPG',
+  '/IMG_4366.JPG',
+  '/IMG_4369.JPG',
+  '/IMG_4376.JPG',
+  '/IMG_4377.JPG',
+  '/IMG_4378.JPG',
+  '/IMG_4380.JPG',
+  '/IMG_4381.JPG',
+  '/IMG_4382.JPG',
+  '/IMG_4383.JPG',
+  '/IMG_4384.JPG',
+  '/IMG_4385.JPG',
+  '/IMG_4386.JPG',
+  '/IMG_4387.JPG',
+  '/IMG_4388.JPG',
+  '/IMG_4389.JPG',
+  '/IMG_4390.JPG',
+  '/IMG_4391.JPG',
+  '/IMG_4393.JPG',
+  '/IMG_4395.JPG',
+  '/IMG_4396.JPG',
+  '/IMG_4398.JPG',
+  '/IMG_4399.JPG',
+  '/IMG_4400.JPG',
+  '/IMG_4401.JPG',
+  '/IMG_4402.JPG',
+  '/IMG_4403.JPG',
+  '/IMG_4404.JPG',
+  '/IMG_4405.JPG',
+  '/IMG_4406.JPG',
+  '/IMG_4408.JPG',
+  '/IMG_4409.JPG',
+  '/IMG_4410.JPG',
+  '/IMG_4411.JPG',
+  '/IMG_4412.JPG',
+  '/IMG_4413.JPG',
+  '/IMG_4414.JPG',
+  '/IMG_4415.JPG',
+  '/IMG_4416.JPG',
+  '/IMG_4418.JPG',
+  '/IMG_4419.JPG',
+  '/IMG_4420.JPG',
+  '/IMG_4422.JPG',
+  '/IMG_4424.JPG',
+  '/IMG_4426.JPG',
+  '/IMG_4427.JPG',
+  '/IMG_4428.JPG',
+  '/IMG_4430.JPG',
+  '/IMG_4431.JPG',
+  '/IMG_4432.JPG',
+  '/IMG_4435.JPG',
+  '/IMG_4436.JPG',
+  '/IMG_4437.JPG',
+  '/IMG_4438.JPG',
+  '/IMG_4439.JPG',
+  '/IMG_4440.JPG',
+  '/IMG_4441.JPG',
+  '/IMG_4442.JPG',
+  '/IMG_4447.JPG',
+  '/IMG_4448.JPG',
+  '/IMG_4449.JPG',
+  '/IMG_4451.JPG',
+  '/IMG_4452.JPG',
+  '/IMG_4453.JPG',
+  '/IMG_4454.JPG',
+  '/IMG_4455.JPG',
+  '/IMG_4456.JPG',
+  '/IMG_4457.JPG',
+  '/IMG_4458.JPG',
+  '/IMG_4459.JPG',
+  '/IMG_4460.JPG',
+  '/IMG_4461.JPG',
+  '/IMG_4462.JPG',
+  '/IMG_4463.JPG',
+  '/IMG_4464.JPG',
+  '/IMG_4465.JPG',
+  '/IMG_4466.JPG',
+  '/IMG_4467.JPG',
+  '/IMG_4468.JPG',
+  '/IMG_4469.JPG',
+  '/IMG_4470.JPG',
+  '/IMG_4471.JPG',
+  '/IMG_4472.JPG',
+  '/IMG_4474.JPG',
+  '/IMG_4478.JPG',
+  '/IMG_4479.JPG',
+  '/IMG_4480.JPG',
+  '/IMG_4481.JPG',
+  '/IMG_4482.JPG',
+  '/IMG_4483.JPG',
+  '/IMG_4484.JPG',
+  '/IMG_4485.JPG',
+  '/IMG_4487.JPG',
+  '/IMG_4488.JPG',
+  '/IMG_4489.JPG',
+  '/IMG_4490.JPG',
+  '/IMG_4491.JPG',
+  '/IMG_4492.JPG',
+  '/IMG_4493.JPG',
+  '/IMG_4494.JPG',
+  '/IMG_4496.JPG',
+  '/IMG_4497.JPG',
+  '/IMG_4499.JPG',
+  '/IMG_4500.JPG',
+  '/IMG_4502.JPG',
+  '/IMG_4505.JPG',
+  '/IMG_4506.JPG',
+  '/IMG_4508.JPG',
+  '/IMG_4509.JPG',
+  '/IMG_4510.JPG',
+  '/IMG_4511.JPG',
+  '/IMG_4512.JPG',
+  '/IMG_4513.JPG',
+  '/IMG_4515.JPG',
+  '/IMG_4517.JPG',
+  '/IMG_4518.JPG',
+  '/IMG_4520.JPG',
+  '/IMG_4522.JPG',
+  '/IMG_4523.JPG',
+  '/IMG_4524.JPG',
+  '/IMG_4525.JPG',
+  '/IMG_4528.JPG',
+  '/IMG_4529.JPG',
+  '/IMG_4530.JPG',
+  '/IMG_4531.JPG',
+  '/IMG_4532.JPG',
+  '/IMG_4533.JPG',
+  '/IMG_4534.JPG',
+  '/IMG_4535.JPG',
+  '/IMG_4536.JPG',
+  '/IMG_4537.JPG',
+  '/IMG_4539.JPG',
+  '/IMG_4540.JPG',
+  '/IMG_4541.JPG',
+  '/IMG_4543.JPG',
+  '/IMG_4544.JPG',
+  '/IMG_4546.JPG',
+  '/IMG_4547.JPG',
+  '/IMG_4548.JPG',
+  '/IMG_4549.JPG',
+  '/IMG_4550.JPG',
+  '/IMG_4551.JPG',
+  '/IMG_4552.JPG',
+  '/IMG_4554.JPG',
+  '/IMG_4558.JPG',
+  '/IMG_4559.JPG',
+  '/IMG_4572.JPG',
+  '/IMG_4574.JPG',
+  '/IMG_4575.JPG',
+  '/IMG_4576.JPG',
+  '/IMG_4577.JPG',
+  '/IMG_4578.JPG',
+  '/IMG_4580.JPG',
+  '/9-Preview-9.jpg',
+  '/10-Preview-10.jpg',
+  '/12-Preview-12.jpg',
+  '/14-Preview-14.jpg',
+  '/16-Preview-16.jpg',
+  '/17-Preview-17.jpg',
+  '/19-Preview-19.jpg',
+  '/20-Preview-20.jpg',
+  '/22-Preview-22.jpg',
+  '/23-Preview-23.jpg',
+  '/24-Preview-24.jpg',
+  '/25-Preview-25.jpg',
+  '/26-Preview-26.jpg',
+  '/27-Preview-27.jpg',
   'iphone-kristina-sophia.jpg',
   'kristina-anna-michell.jpg',
   'lisa.jpg',
@@ -1626,14 +1626,32 @@ function createGalleryItem(imageName, index) {
   `;
 }
 
-// Global lightbox state
+// Global lightbox state with section support
 let globalLightboxState = {
   allImages: [],
   currentImageIndex: 0,
+  currentSection: 'hero', // 'hero', 'ceremony', 'gallery'
+  sections: {
+    hero: { images: [], startIndex: 0 },
+    ceremony: { images: [], startIndex: 0 },
+    gallery: { images: [], startIndex: 0 }
+  },
   lightboxModal: null,
   lightboxImage: null,
   imageCounter: null
 };
+
+// Global function to update image counter for current section
+function updateImageCounterForSection() {
+  const { imageCounter, currentSection, sections, currentImageIndex } = globalLightboxState;
+  
+  if (!imageCounter || !currentSection || !sections[currentSection]) return;
+  
+  const section = sections[currentSection];
+  const sectionIndex = currentImageIndex - section.startIndex + 1;
+  
+  imageCounter.textContent = `${sectionIndex} / ${section.images.length} (${section.name})`;
+}
 
 // Global function to show image at specific index
 function showImageAtIndex(index) {
@@ -1643,6 +1661,19 @@ function showImageAtIndex(index) {
   
   if (index >= 0 && index < allImages.length) {
     globalLightboxState.currentImageIndex = index;
+    
+    // Determine which section this image belongs to
+    const heroCount = globalLightboxState.sections.hero.images.length;
+    const ceremonyCount = globalLightboxState.sections.ceremony.images.length;
+    
+    if (index < heroCount) {
+      globalLightboxState.currentSection = 'hero';
+    } else if (index < heroCount + ceremonyCount) {
+      globalLightboxState.currentSection = 'ceremony';
+    } else {
+      globalLightboxState.currentSection = 'gallery';
+    }
+    
     const imagePath = `/media/${allImages[index]}`;
     lightboxImage.src = imagePath;
     
@@ -1650,17 +1681,15 @@ function showImageAtIndex(index) {
     lightboxModal.classList.remove('hidden');
     lightboxModal.classList.add('flex');
     
-    // Update counter
-    if (imageCounter) {
-      imageCounter.textContent = `${index + 1} / ${allImages.length}`;
-    }
+    // Update counter based on current section
+    updateImageCounterForSection();
     
     // Prevent body scroll
     document.body.style.overflow = 'hidden';
   }
 }
 
-// Function to set up lightbox functionality
+// Function to set up lightbox functionality with section-based navigation
 function setupLightbox() {
   // Get ALL gallery items (both hero and main gallery)
   const heroGalleryItems = document.querySelectorAll('#heroGalleryContainer .gallery-item:not([data-lightbox-initialized])');
@@ -1678,54 +1707,103 @@ function setupLightbox() {
   // Create combined images list: hero images + ceremony images + main gallery images
   const allImages = [...heroGalleryImages, ...ceremonyGalleryImages, ...galleryImages];
   
+  // Setup sections with their respective images and start indices
+  const sections = {
+    hero: { 
+      images: heroGalleryImages, 
+      startIndex: 0,
+      name: 'Hero Galerie'
+    },
+    ceremony: { 
+      images: ceremonyGalleryImages, 
+      startIndex: heroGalleryImages.length,
+      name: 'Trauung'
+    },
+    gallery: { 
+      images: galleryImages, 
+      startIndex: heroGalleryImages.length + ceremonyGalleryImages.length,
+      name: 'Galerie'
+    }
+  };
+  
   // Update global lightbox state
   globalLightboxState = {
     allImages,
     currentImageIndex: 0,
+    currentSection: 'hero',
+    sections,
     lightboxModal,
     lightboxImage,
     imageCounter
   };
   
-  // Function to update image counter
-  function updateImageCounter() {
-    if (imageCounter) {
-      imageCounter.textContent = `${globalLightboxState.currentImageIndex + 1} / ${allImages.length}`;
-    }
-  }
-  
-  // Function to show image at specific index (local version)
+  // Function to show image at specific index within current section
   function showImageAtIndexLocal(index) {
-    if (index >= 0 && index < allImages.length) {
+    const currentSection = globalLightboxState.currentSection;
+    const section = globalLightboxState.sections[currentSection];
+    
+    // Constrain index to current section
+    if (index >= section.startIndex && index < section.startIndex + section.images.length) {
       globalLightboxState.currentImageIndex = index;
-      const imagePath = `/media/${allImages[index]}`;
+      const imagePath = `/media/${globalLightboxState.allImages[index]}`;
       lightboxImage.src = imagePath;
-      updateImageCounter();
+      updateImageCounterForSection();
     }
   }
   
-  // Function to show next image
+  // Function to show next image within current section
   function showNextImage() {
-    const nextIndex = (globalLightboxState.currentImageIndex + 1) % allImages.length;
+    const currentSection = globalLightboxState.currentSection;
+    const section = globalLightboxState.sections[currentSection];
+    const currentIndex = globalLightboxState.currentImageIndex;
+    
+    // Calculate next index within section bounds
+    const sectionStart = section.startIndex;
+    const sectionEnd = section.startIndex + section.images.length - 1;
+    
+    let nextIndex;
+    if (currentIndex >= sectionEnd) {
+      // Loop back to start of section
+      nextIndex = sectionStart;
+    } else {
+      nextIndex = currentIndex + 1;
+    }
+    
     showImageAtIndexLocal(nextIndex);
   }
   
-  // Function to show previous image
+  // Function to show previous image within current section
   function showPreviousImage() {
-    const prevIndex = (globalLightboxState.currentImageIndex - 1 + allImages.length) % allImages.length;
+    const currentSection = globalLightboxState.currentSection;
+    const section = globalLightboxState.sections[currentSection];
+    const currentIndex = globalLightboxState.currentImageIndex;
+    
+    // Calculate previous index within section bounds
+    const sectionStart = section.startIndex;
+    const sectionEnd = section.startIndex + section.images.length - 1;
+    
+    let prevIndex;
+    if (currentIndex <= sectionStart) {
+      // Loop to end of section
+      prevIndex = sectionEnd;
+    } else {
+      prevIndex = currentIndex - 1;
+    }
+    
     showImageAtIndexLocal(prevIndex);
   }
   
   // Add click handlers to hero gallery items (only new ones)
   heroGalleryItems.forEach((item, index) => {
     item.addEventListener('click', () => {
-      globalLightboxState.currentImageIndex = index; // Hero images start at index 0
+      globalLightboxState.currentImageIndex = index;
+      globalLightboxState.currentSection = 'hero';
       const imageSrc = item.dataset.image;
       
       lightboxImage.src = imageSrc;
       lightboxModal.classList.remove('hidden');
       lightboxModal.classList.add('flex');
-      updateImageCounter();
+      updateImageCounterForSection();
       
       // Prevent body scroll
       document.body.style.overflow = 'hidden';
@@ -1738,13 +1816,15 @@ function setupLightbox() {
   // Add click handlers to main gallery items (only new ones)
   mainGalleryItems.forEach((item, index) => {
     item.addEventListener('click', () => {
-      globalLightboxState.currentImageIndex = heroGalleryImages.length + ceremonyGalleryImages.length + index; // Main gallery starts after hero and ceremony images
+      const galleryStartIndex = heroGalleryImages.length + ceremonyGalleryImages.length;
+      globalLightboxState.currentImageIndex = galleryStartIndex + index;
+      globalLightboxState.currentSection = 'gallery';
       const imageSrc = item.dataset.image;
       
       lightboxImage.src = imageSrc;
       lightboxModal.classList.remove('hidden');
       lightboxModal.classList.add('flex');
-      updateImageCounter();
+      updateImageCounterForSection();
       
       // Prevent body scroll
       document.body.style.overflow = 'hidden';
@@ -1961,28 +2041,40 @@ async function loadCeremonyImageContainer(container, imageSrc, index) {
 
 // Function to setup lightbox for ceremony gallery items
 function setupCeremonyLightbox() {
-  const ceremonyGalleryItems = document.querySelectorAll('#ceremony-gallery .gallery-item:not([data-lightbox-initialized])')
+  const ceremonyGalleryItems = document.querySelectorAll('#ceremony-gallery .gallery-item:not([data-lightbox-initialized])');
   
-  if (ceremonyGalleryItems.length === 0) return
+  if (ceremonyGalleryItems.length === 0) return;
 
-  const lightboxModal = document.getElementById('lightboxModal')
-  const lightboxImage = document.getElementById('lightboxImage')
+  const lightboxModal = document.getElementById('lightboxModal');
+  const lightboxImage = document.getElementById('lightboxImage');
   
-  if (!lightboxModal || !lightboxImage) return
+  if (!lightboxModal || !lightboxImage) return;
 
   // Add click handlers to ceremony gallery items
   ceremonyGalleryItems.forEach((item, index) => {
     item.addEventListener('click', () => {
-      // Calculate the position in the combined image list
-      // Position = heroImages + ceremonyImages + mainGalleryImages up to clicked index
-      const ceremonyIndex = parseInt(item.getAttribute('data-ceremony-index'))
-      const totalIndex = heroGalleryImages.length + ceremonyIndex
+      const ceremonyIndex = parseInt(item.getAttribute('data-ceremony-index'));
+      const ceremonyStartIndex = globalLightboxState.sections.ceremony.startIndex;
       
-      // Use existing lightbox functionality
-      showImageAtIndex(totalIndex)
-    })
+      // Set current section to ceremony
+      globalLightboxState.currentSection = 'ceremony';
+      globalLightboxState.currentImageIndex = ceremonyStartIndex + ceremonyIndex;
+      
+      const imageSrc = item.querySelector('img').src;
+      lightboxImage.src = imageSrc;
+      
+      // Show lightbox
+      lightboxModal.classList.remove('hidden');
+      lightboxModal.classList.add('flex');
+      
+      // Update counter for ceremony section
+      updateImageCounterForSection();
+      
+      // Prevent body scroll
+      document.body.style.overflow = 'hidden';
+    });
     
     // Mark as initialized
-    item.setAttribute('data-lightbox-initialized', 'true')
-  })
+    item.setAttribute('data-lightbox-initialized', 'true');
+  });
 }
