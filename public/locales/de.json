@@ -100,6 +100,12 @@
           "url": ""
         }
       ]
+    },
+    "external_gallery": {
+      "title": "Fotos vom Fotografen",
+      "subtitle": "Die wunderschönen Aufnahmen unserer Fotografen",
+      "description": "Hier findet ihr die Fotos von unserem Fotografen. Die Fotos von Freunden und Familie findet ihr weiter unten.",
+      "button": "Zur Galerie"
     }
   },
   "party": {

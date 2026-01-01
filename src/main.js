@@ -818,6 +818,38 @@ document.querySelector('#app').innerHTML = `
             </div>
           </div>
         </div>
+
+        <!-- External Gallery Iframe -->
+        <div class="mt-16 sm:mt-20">
+          <div class="bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 transition-colors duration-300">
+            <div class="text-center mb-6">
+              <div class="flex justify-center mb-4">
+                <svg class="w-8 h-8 sm:w-10 sm:h-10 text-indigo-500 dark:text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+              </div>
+              <h3 class="text-lg sm:text-xl font-semibold text-gray-800 dark:text-white mb-2" data-i18n="photos.external_gallery.title">Fotos vom Fotografen</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-300 mb-4" data-i18n="photos.external_gallery.subtitle">Die wunderschönen Aufnahmen unserer Fotografen</p>
+              <p class="text-sm text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto" data-i18n="photos.external_gallery.description">Hier findet ihr die Fotos von unserem Fotografen. Die Fotos von Freunden und Familie findet ihr weiter unten.</p>
+              
+              <a href="https://galerie.lr-foto.de/06-03-hochzeit-anna-und-michell" target="_blank" class="inline-flex items-center px-6 py-3 bg-indigo-500 hover:bg-indigo-600 text-white font-medium rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg mb-6">
+                <span data-i18n="photos.external_gallery.button">Zur Galerie</span>
+                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                </svg>
+              </a>
+            </div>
+            
+            <div class="w-full h-[600px] rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700">
+              <iframe 
+                src="https://galerie.lr-foto.de/06-03-hochzeit-anna-und-michell" 
+                class="w-full h-full" 
+                frameborder="0" 
+                allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+        </div>
         
         <!-- Galerie -->
         <div class="mt-12 sm:mt-16">
@@ -1078,66 +1110,6 @@ document.addEventListener('click', function(e) {
 
 // Gallery functionality for loading media asynchronously
 const galleryImages = [
-  '1-Preview-1.jpg',
-  '2-Preview-2.jpg',
-  '28-Preview-28.jpg',
-  '30-Preview-30.jpg',
-  '31-Preview-31.jpg',
-  '32-Preview-32.jpg',
-  '33-Preview-33.jpg',
-  '34-Preview-34.jpg',
-  '35-Preview-35.jpg',
-  '36-Preview-36.jpg',
-  '37-Preview-37.jpg',
-  '39-Preview-39.jpg',
-  '4-Preview-4.jpg',
-  '41-Preview-41.jpg',
-  '42-Preview-42.jpg',
-  '43-Preview-43.jpg',
-  '44-Preview-44.jpg',
-  '45-Preview-45.jpg',
-  '46-Preview-46.jpg',
-  '47-Preview-47.jpg',
-  '48-Preview-48.jpg',
-  '49-Preview-49.jpg',
-  '5-Preview-5.jpg',
-  '50-Preview-50.jpg',
-  '51-Preview-51.jpg',
-  '52-Preview-52.jpg',
-  '53-Preview-53.jpg',
-  '55-Preview-55.jpg',
-  '56-Preview-56.jpg',
-  '57-Preview-57.jpg',
-  '58-Preview-58.jpg',
-  '59-Preview-59.jpg',
-  '6-Preview-6.jpg',
-  '60-Preview-60.jpg',
-  '61-Preview-61.jpg',
-  '62-Preview-62.jpg',
-  '63-Preview-63.jpg',
-  '64-Preview-64.jpg',
-  '65-Preview-65.jpg',
-  '66-Preview-66.jpg',
-  '67-Preview-67.jpg',
-  '68-Preview-68.jpg',
-  '69-Preview-69.jpg',
-  '7-Preview-7.jpg',
-  '70-Preview-70.jpg',
-  '71-Preview-71.jpg',
-  '72-Preview-72.jpg',
-  '73-Preview-73.jpg',
-  '74-Preview-74.jpg',
-  '75-Preview-75.jpg',
-  '76-Preview-76.jpg',
-  '77-Preview-77.jpg',
-  '78-Preview-78.jpg',
-  '79-Preview-79.jpg',
-  '8-Preview-8.jpg',
-  '80-Preview-80.jpg',
-  '81-Preview-81.jpg',
-  '82-Preview-82.jpg',
-  '83-Preview-83.jpg',
-  '85-Preview-85.jpg',
   'alena.jpg',
   'aljona-anna-michell-geschenk.jpg',
   'aljona-kristina.jpg',
